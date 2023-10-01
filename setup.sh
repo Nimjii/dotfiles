@@ -11,3 +11,15 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 	&& fisher install jorgebucaran/fisher
 	&& fisher install jorgebucaran/nvm.fish
 	&& nvm install lts
+
+# install tpm
+mkdir ~/.config/tmux/plugins &&
+	git clone --depth=1 https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm &&
+	~/.config/tmux/plugins/tpm/scripts/install_plugins.sh
+
+# install lazy and update everything
+mkdir ~/.local/nvim	&&
+	git clone --filter=blob:none --single-branch https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy
+nvim --headless "+Lazy! sync" +qa
+nvim --headless "+MasonUpdate" +qa
+nvim --headless "+TSUpdate" +qa
