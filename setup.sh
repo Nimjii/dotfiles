@@ -2,6 +2,7 @@
 
 # symlink all config files
 stow fish -t ~
+stow nvim -t ~
 stow starship -t ~
 stow tmux -t ~
 stow wezterm -t ~
