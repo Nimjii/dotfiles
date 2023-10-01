@@ -2,10 +2,14 @@
 
 # symlink all config files
 stow fish -t ~
+stow git -t ~
 stow nvim -t ~
 stow starship -t ~
 stow tmux -t ~
 stow wezterm -t ~
+
+# install git delta
+brew install git-delta
 
 # install fisher
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source

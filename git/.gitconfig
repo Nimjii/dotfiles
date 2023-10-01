@@ -1,0 +1,11 @@
+[include]
+	path = /Users/l.spreitzer/.config/themes.gitconfig
+[user]
+	name = Lukas Spreitzer
+	email = l.spreitzer@limesoda.com
+[core]
+	autocrlf = input
+[pull]
+	rebase = true
+[delta]
+	features = chameleon
