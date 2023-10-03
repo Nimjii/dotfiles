@@ -2,16 +2,15 @@
 
 return {
   'RRethy/vim-illuminate',
-  dependencies = {
-    'folke/which-key.nvim',
-  },
   config = function ()
     require('illuminate').configure({
       filetypes_denylist = {
-          'dirbuf',
-          'dirvish',
-          'fugitive',
-          'neo-tree',
+        'dirbuf',
+        'dirvish',
+        'fugitive',
+        'neo-tree',
+        'neo-tree-popup',
+        'TelescopePrompt',
       },
       large_file_cutoff = 10000,
     })
