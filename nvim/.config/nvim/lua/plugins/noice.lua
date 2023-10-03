@@ -35,6 +35,9 @@ return {
           ['cmp.entry.get_documentation'] = true,
         },
       },
+      messages = {
+        view = 'mini',
+      },
       presets = {
         command_palette = true,
         long_message_to_split = true,
