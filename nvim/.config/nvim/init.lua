@@ -238,7 +238,8 @@ local on_attach = function(_, bufnr)
       r = { vim.lsp.buf.rename, 'Rename symbol' },
       a = { vim.lsp.buf.code_action, 'Code action' },
       f = { vim.lsp.buf.format, 'Format buffer' },
-      S = { function() require('aerial').toggle() end, 'Symbols outline' },
+      s = { function() require('aerial').nav_toggle() end, 'Symbols navigation window' },
+      S = { function() require('aerial').toggle({ direction = 'left' }) end, 'Symbols outline' },
     },
   }, { buffer = bufnr, prefix = '<leader>'})
 

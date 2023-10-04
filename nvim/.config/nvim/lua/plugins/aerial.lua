@@ -7,10 +7,16 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   opts = {
-    show_trailing_blankline_indent = false,
-    use_treesitter = true,
     char = "▏",
     context_char = "▏",
+    layout = {
+      default_direction = 'prefer_left',
+      placement = 'edge',
+      min_width = 40,
+    },
+    open_automatic = true,
     show_current_context = true,
+    show_trailing_blankline_indent = false,
+    use_treesitter = true,
   },
 }
