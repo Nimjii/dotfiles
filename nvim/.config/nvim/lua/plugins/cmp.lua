@@ -91,9 +91,13 @@ return {
     cmp.setup({
       enabled = function ()
         local buf = vim.api.nvim_get_current_buf()
-        if require('utils').is_large_file(buf) then
+        local buf_filetype = vim.api.nvim_buf_get_option(buf, 'filetype')
+        local filetype_denylist = { 'neo-tree', 'neo-tree-popup', 'TelescopePrompt' }
+
+        if require('utils').is_large_file(buf) or vim.tbl_contains(filetype_denylist, buf_filetype) then
           return false
         end
+
         return true
       end,
       window = {
