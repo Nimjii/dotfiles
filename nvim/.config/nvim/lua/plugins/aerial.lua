@@ -14,7 +14,14 @@ return {
       placement = 'edge',
       min_width = 40,
     },
-    open_automatic = true,
+    open_automatic = function ()
+      for _, layout in pairs(require('dapui.windows').layouts) do
+        if layout:is_open() then
+          return false
+        end
+      end
+      return true
+    end,
     show_current_context = true,
     show_trailing_blankline_indent = false,
     use_treesitter = true,
