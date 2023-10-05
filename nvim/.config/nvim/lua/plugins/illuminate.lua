@@ -11,6 +11,7 @@ return {
         'neo-tree',
         'neo-tree-popup',
         'TelescopePrompt',
+        'toggleterm',
       },
       large_file_cutoff = 10000,
     })
