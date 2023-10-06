@@ -10,6 +10,20 @@ return {
 
     -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp',
+    {
+      'onsails/lspkind.nvim',
+      config = function ()
+        require('lspkind').init({
+          symbol_map = {
+            Color = '󰌁',
+            Copilot = '',
+            String = '',
+          }
+        })
+
+        vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
+      end
+    },
 
     -- Adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
@@ -19,6 +33,7 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-cmdline',
     'ray-x/cmp-treesitter',
+
     {
       'js-everts/cmp-tailwind-colors',
       opts = {
@@ -27,43 +42,26 @@ return {
           return {
             fg = itemColor,
             bg = nil,
-            text = '󰌁',
+            text = 'Color',
           }
         end,
       },
     },
+
+    {
+      'zbirenbaum/copilot-cmp',
+      dependencies = {
+        'zbirenbaum/copilot.lua',
+      },
+      config = function ()
+        require('copilot_cmp').setup()
+      end
+    }
   },
   config = function ()
     local cmp = require('cmp')
     local ls = require('luasnip')
-
-    local icons = {
-      Text = "",
-      Method = "",
-      Function = "󰊕",
-      Constructor = "",
-      Field = "󰷳",
-      Variable = "󰫧",
-      Class = "",
-      Interface = "",
-      Module = "",
-      Property = "",
-      Unit = "",
-      Value = "",
-      Enum = "",
-      Keyword = "",
-      Snippet = "",
-      Color = "",
-      File = "󰈙",
-      Reference = "",
-      Folder = "",
-      EnumMember = "",
-      Constant = "",
-      Struct = "",
-      Event = "",
-      Operator = "",
-      TypeParameter = "",
-    }
+    local lspkind = require('lspkind')
 
     local border_opts = {
       border = 'single',
@@ -106,26 +104,14 @@ return {
       },
       formatting = {
         fields = { 'kind', 'abbr', 'menu' },
-        format = function(entry, item)
-          if item.kind == 'Color' then
-            item = require('cmp-tailwind-colors').format(entry, item)
-
-            if item.kind ~= 'Color' then
-              item.menu = 'Color'
-              return item
+        format = lspkind.cmp_format({
+          before = function (entry, item)
+            if item.kind == 'Color' then
+              return require('cmp-tailwind-colors').format(entry, item)
             end
+            return item
           end
-
-          item.menu = item.kind
-
-          if icons[item.kind] then
-            item.kind = icons[item.kind] .. ' '
-          else
-            item.kind = ''
-          end
-
-          return item
-        end,
+        }),
       },
       snippet = {
         expand = function(args)
@@ -165,6 +151,7 @@ return {
       },
       sources = cmp.config.sources {
         { name = 'nvim_lsp', priority = 1000 },
+        { name = 'copilot', priority = 1000 },
         { name = 'luasnip', priority = 900 },
         { name = 'nvim_lsp_signature_help', priority = 800 },
         { name = 'buffer', priority = 700 },
