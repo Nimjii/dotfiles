@@ -1,5 +1,6 @@
 -- Dependencies
 require 'autocmds'
+require 'filetypes'
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -38,7 +39,23 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  'nvim-tree/nvim-web-devicons',
+  {
+    'nvim-tree/nvim-web-devicons',
+    opts = {
+      override = {
+        tsconfig = {
+          icon = '',
+          color = '#FF8700',
+          name = 'TSconfig',
+        },
+        typoscript = {
+          icon = '',
+          color = '#FF8700',
+          name = 'TypoScript',
+        },
+      },
+    },
+  },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
