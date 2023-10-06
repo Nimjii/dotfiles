@@ -95,7 +95,9 @@ require('lazy').setup({
   {
     'Wansmer/symbol-usage.nvim',
     config = function ()
-      require('symbol-usage').setup({})
+      require('symbol-usage').setup({
+        vt_position = 'end_of_line',
+      })
     end,
   },
 
