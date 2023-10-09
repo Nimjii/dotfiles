@@ -125,21 +125,6 @@ require('lazy').setup({
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
--- Set up neotree bindings
-require('which-key').register({
-  e = { '<cmd>Neotree toggle<cr>', 'Toggle NeoTree' },
-  o = {
-    function ()
-      if vim.bo.filetype == "neo-tree" then
-        vim.cmd.wincmd "p"
-      else
-        vim.cmd.Neotree "focus"
-      end
-    end,
-    'Toggle Explorer Focus',
-  },
-}, { prefix = '<leader>' })
-
 --[[ Setting options ]]
 
 --See `:help vim.o`
@@ -198,6 +183,7 @@ vim.keymap.set({ 'n' }, '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Re
 vim.keymap.set({ 'n' }, '<C-s>', '<C-w>s', { desc = 'Create horizontal split' })
 vim.keymap.set({ 'n' }, '<C-v>', '<C-w>v', { desc = 'Create vertical split' })
 
+vim.keymap.set({ 'n' }, '<leader>e', '<cmd>Neotree current toggle reveal<cr>', { desc = 'Toggle NeoTree' })
 vim.keymap.set({ 'n' }, '<leader>z', function () require('maximize').toggle() end, { desc = 'Toggle split maximization' })
 
 -- Remap for dealing with word wrap
