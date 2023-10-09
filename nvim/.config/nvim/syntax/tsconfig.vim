@@ -1,7 +1,7 @@
 " Vim syntax file
-" Language:		TypoScript
+" Language:	TSconfig
 " Maintainer:	Nimjii
-" Filenames :	.typoscript
+" Filenames:	.tsconfig
 " Last Change:	2023 Oct 06
 
 if exists("b:current_syntax")

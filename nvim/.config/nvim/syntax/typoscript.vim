@@ -1,8 +1,8 @@
 " Vim syntax file
-" Language:		TypoScript
+" Language:	TypoScript
 " Maintainer:	Nimjii
-" Filenames :	.typoscript
-" Last Change:	2023 Oct 06
+" Filenames:	.typoscript
+" Last Change:	2023 Oct 09
 
 if exists("b:current_syntax")
     finish
@@ -57,47 +57,6 @@ hi def link typoscriptSpecial			Special
 hi def link typoscriptString			String
 hi def link typoscriptRightRef			Constant
 hi def link typoscriptRightString		String
-
-" syn match typoscriptAmpersand "&"
-" syn match typoscriptBracketOpen "\["
-" syn match typoscriptBracketClose "\]"
-" syn match typoscriptColon ":" contained containedin=typoscriptDef
-" syn match typoscriptComment "#.*" containedin=typoscriptDef
-" syn match typoscriptCurlyClose "}" contained containedin=typoScriptDef
-" syn match typoscriptCurlyOpen "{" contained containedin=typoScriptDef
-" syn match typoscriptDot "\." contained containedin=typoscriptDef
-" syn match typoscriptEquals "=" contained containedin=typoscriptDef,typoscriptOperator
-" syn match typoscriptGreaterThan ">" contained containedin=typoscriptDef
-" syn match typoscriptLowerThan "<" contained containedin=typoScriptDef
-" syn match typoscriptPipe "|"
-
-" syn region typoscriptBlock start="{" end="}" containedin=typoscriptDef transparent fold
-" syn region typoscriptBlockComment start="\/\*" end="\*\/"
-" syn region typoscriptCondition start="\[.*\]" end="\[.*\]" containedin=typoscriptDef transparent fold
-" syn region typoscriptDef start="^[^#@\/\/\[\]]" end="$" oneline keepend
-" syn region typoscriptInclude start="@import" end="$" contains=typoscriptString oneline keepend
-" syn region typoscriptRight start="=[^<]" end="$" contained containedin=typoscriptDef oneline keepend
-" syn region typoscriptOperator start="^" end="=" contained containedin=typoscriptRight oneline
-" syn region typoscriptString start="['\"]" end="['\"]" contained
-
-" hi def link typoscriptAmpersand 	Special
-" hi def link typoscriptAltComment 	Comment
-" hi def link typoscriptBlockComment 	Comment
-" hi def link typoscriptBracketClose 	Special
-" hi def link typoscriptBracketOpen 	Special
-" hi def link typoscriptColon 		Ignore
-" hi def link typoscriptComment 		Comment
-" hi def link typoscriptCurlyClose 	Ignore
-" hi def link typoscriptCurlyOpen 	Ignore
-" hi def link typoscriptDef 		Constant
-" hi def link typoscriptDot		Ignore
-" hi def link typoscriptEquals 		Ignore
-" hi def link typoscriptGreaterThan 	Ignore
-" hi def link typoscriptInclude 		Include
-" hi def link typoscriptLowerThan 	Ignore
-" hi def link typoscriptPipe 		Special
-" hi def link typoscriptRight 		String
-" hi def link typoscriptString		String
 
 let b:current_syntax = 'typoscript'
 
