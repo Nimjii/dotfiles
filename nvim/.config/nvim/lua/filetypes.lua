@@ -1,5 +1,12 @@
 -- @module filetypes
 
+local function tsconfig_callback()
+  vim.bo.commentstring = '#%s'
+  vim.bo.syntax = 'tsconfig'
+  vim.o.foldmethod = 'syntax'
+  return 'tsconfig'
+end
+
 local function typoscript_callback()
   vim.bo.commentstring = '#%s'
   vim.bo.syntax = 'typoscript'
@@ -9,7 +16,7 @@ end
 
 vim.filetype.add({
   extension = {
-    tsconfig = 'tsconfig',
+    tsconfig = tsconfig_callback,
     typoscript = typoscript_callback,
   },
   pattern = {
