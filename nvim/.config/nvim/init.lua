@@ -128,27 +128,31 @@ pcall(require('telescope').load_extension, 'fzf')
 --[[ Setting options ]]
 
 --See `:help vim.o`
-vim.o.breakindent= true
-vim.o.clipboard= 'unnamedplus'
-vim.o.completeopt= 'menuone,noselect'
-vim.o.copyindent= true
-vim.o.cursorline= true
+vim.o.autoindent = true
+vim.o.backspace = 'indent,eol,start'
+vim.o.breakindent = true
+vim.o.clipboard = 'unnamedplus'
+vim.o.completeopt = 'menuone,noselect'
+vim.o.copyindent = true
+vim.o.cursorline = true
 vim.o.foldcolumn = '0'
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-vim.o.hlsearch= false
-vim.o.ignorecase= true
-vim.o.mouse= 'a'
+vim.o.hlsearch = false
+vim.o.ignorecase = true
+vim.o.mouse = 'a'
 vim.o.pumblend = 5
-vim.o.scrolloff= 8
-vim.o.smartcase= true
+vim.o.scrolloff = 8
+vim.o.shiftwidth = 4
+vim.o.smartcase = true
+vim.o.softtabstop = 4
 vim.o.tabstop = 4
-vim.o.termguicolors= true
-vim.o.timeoutlen= 300
-vim.o.undofile= true
-vim.o.updatetime= 250
-vim.o.wrap= false
+vim.o.termguicolors = true
+vim.o.timeoutlen = 300
+vim.o.undofile = true
+vim.o.updatetime = 250
+vim.o.wrap = false
 
 vim.wo.relativenumber= true
 vim.wo.signcolumn= 'yes'
