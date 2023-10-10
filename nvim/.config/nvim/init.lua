@@ -45,7 +45,7 @@ require('lazy').setup({
       override = {
         tsconfig = {
           icon = '',
-          color = '#FF8700',
+          color = '#8c8c8c',
           name = 'TSconfig',
         },
         typoscript = {
