@@ -110,6 +110,7 @@ require('lazy').setup({
 
   {
     'Wansmer/symbol-usage.nvim',
+    event = 'FileType',
     config = function ()
       require('symbol-usage').setup({
         vt_position = 'end_of_line',
