@@ -68,18 +68,33 @@ return {
       lualine_a = {'branch'},
       lualine_b = { get_lsps },
       lualine_c = {},
-      lualine_x = { maximize_status },
+      lualine_x = {
+        maximize_status,
+        {
+          'filename',
+          newfile_status = true,
+          symbols = {
+            modified = '',
+            readonly = '',
+          },
+        },
+      },
       lualine_y = {
         { get_grapple, cond = require('grapple').exists },
       },
       lualine_z = {
         {
-          'filename',
-          newfile_status = true,
-          symbols = {
-            modified = '󰏪',
-            readonly = '',
-          },
+          'tabs',
+          mode = 1,
+          use_mode_colors = true,
+          fmt = function (_, context)
+            local buflist = vim.fn.tabpagebuflist(context.tabnr)
+            local winnr = vim.fn.tabpagewinnr(context.tabnr)
+            local bufnr = buflist[winnr]
+            local mod = vim.fn.getbufvar(bufnr, '&mod')
+
+            return context.tabnr .. (mod == 1 and ' 󰏪' or '')
+          end
         },
       },
     }
