@@ -36,7 +36,6 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
   {
@@ -131,6 +130,7 @@ pcall(require('telescope').load_extension, 'fzf')
 vim.o.autoindent = true
 vim.o.backspace = 'indent,eol,start'
 vim.o.breakindent = true
+vim.o.cindent = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.completeopt = 'menuone,noselect'
 vim.o.copyindent = true
