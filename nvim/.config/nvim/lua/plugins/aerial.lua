@@ -15,6 +15,12 @@ return {
       min_width = 40,
     },
     open_automatic = function ()
+      local current_splits = vim.api.nvim_tabpage_list_wins(0)
+
+      if #current_splits > 1 then
+        return false
+      end
+
       for _, layout in pairs(require('dapui.windows').layouts) do
         if layout:is_open() then
           return false
