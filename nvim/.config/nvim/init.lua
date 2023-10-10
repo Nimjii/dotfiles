@@ -118,8 +118,12 @@ require('lazy').setup({
     end,
   },
 
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    config = function ()
+      require('Comment').setup()
+    end,
+  },
 }, {})
 
 -- Enable telescope fzf native, if installed
