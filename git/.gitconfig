@@ -5,7 +5,11 @@
 	email = l.spreitzer@limesoda.com
 [core]
 	autocrlf = input
+	attributesfile = /Users/l.spreitzer/.gitattributes
 [pull]
 	rebase = true
 [delta]
 	features = chameleon
+[diff "lockb"]
+	textconv = bun
+	binary = true
