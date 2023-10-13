@@ -92,6 +92,7 @@ return {
         s = { function () require('telescope.builtin').grep_string() end, 'Find word under cursor' },
         o = { function () require('telescope.builtin').oldfiles() end, 'Find recently opened files' },
         h = { function () require('telescope.builtin').marks() end, 'Find marks' },
+        y = { '<cmd>Telescope yank_history<cr>', 'Yank history' },
         ['<CR>'] = { function () require('telescope.builtin').resume() end, 'Resume last search' },
       },
       ['<space>'] = { function () require('utils.telescope').buffers() end, 'Find existing buffers' },

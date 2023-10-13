@@ -125,8 +125,8 @@ require('lazy').setup({
   },
 }, {})
 
--- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'yank_history')
 
 --[[ Setting options ]]
 
@@ -135,7 +135,6 @@ vim.o.autoindent = true
 vim.o.backspace = 'indent,eol,start'
 vim.o.breakindent = true
 vim.o.cindent = true
-vim.o.clipboard = 'unnamedplus'
 vim.o.completeopt = 'menuone,noselect'
 vim.o.copyindent = true
 vim.o.cursorline = true
@@ -177,9 +176,6 @@ vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz', { silent = true })
 vim.keymap.set({ 'n' }, 'n', 'nzzzv', { silent = true })
 vim.keymap.set({ 'n' }, 'N', 'Nzzzv', { silent = true })
-vim.keymap.set({ 'n', 'v' }, 'd', 'd', { desc = 'Cut', silent = true })
-vim.keymap.set({ 'n', 'v' }, 'D', '"_d', { desc = 'Delete', silent = true })
-vim.keymap.set({ 'n', 'v' }, 'c', '"_c', { desc = 'Change', silent = true })
 vim.keymap.set({ 'n', 'v' }, 'x', '"_x', { desc = 'Delete character', silent = true })
 vim.keymap.set({ 'n' }, '<C-h>', '<C-w>h', { desc = 'Move to left split' })
 vim.keymap.set({ 'n' }, '<C-j>', '<C-w>j', { desc = 'Move to below split' })
