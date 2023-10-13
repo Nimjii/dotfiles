@@ -114,6 +114,15 @@ require('lazy').setup({
       require('Comment').setup()
     end,
   },
+
+  {
+    'iamcco/markdown-preview.nvim',
+    build = 'cd app && npm install',
+    ft = 'markdown',
+    keys = {
+      { '<leader>Fp', mode = { 'n' }, '<cmd>MarkdownPreviewToggle<cr>', desc = 'Markdown preview' },
+    },
+  },
 }, {})
 
 -- Enable telescope fzf native, if installed
@@ -155,6 +164,7 @@ vim.wo.signcolumn= 'yes'
 vim.g.gitblame_ignored_filetypes = { "lock" }
 vim.g.gitblame_display_virtual_text = 0
 vim.g.gitblame_message_template = "<summary> • <date> • <author>"
+vim.g.mkdp_auto_close = 0
 
 -- [[ Basic Keymaps ]]
 
