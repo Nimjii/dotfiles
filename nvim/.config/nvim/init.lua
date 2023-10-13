@@ -32,10 +32,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   { import = 'plugins' },
 
-  -- Git related plugins
   'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
   'tpope/vim-sleuth',
 
   {
