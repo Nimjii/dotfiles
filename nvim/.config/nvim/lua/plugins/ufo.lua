@@ -34,18 +34,15 @@ return {
     'folke/which-key.nvim',
     'kevinhwang91/promise-async',
   },
-  opts = function (_, opts)
-    require('which-key').register({
-      z = {
-        R = { function () require('ufo').openAllFolds() end, 'Open all folds' },
-        M = { function () require('ufo').closeAllFolds() end, 'Close all folds' },
-        p = { function () require('ufo').peekFoldedLinesUnderCursor() end, 'Close all folds' },
-      },
-    })
-
-    opts.fold_virt_text_handler = handler
-    opts.provider_selector = function (_, filetype, buftype)
+  opts = {
+    fold_virt_text_handler = handler,
+    provider_selector = function (_, filetype, buftype)
       return (filetype == '' or buftype == 'nofile') and 'indent' or {'treesitter', 'indent'}
-    end
-  end,
+    end,
+  },
+  keys = {
+    { 'zR', mode = 'n', function () require('ufo').openAllFolds() end, desc = 'Open all folds' },
+    { 'zM', mode = 'n', function () require('ufo').closeAllFolds() end, desc = 'Close all folds' },
+    { 'zp', mode = 'n', function () require('ufo').peekFoldedLinesUnderCursor() end, desc = 'Preview fold under cursor' },
+  }
 }

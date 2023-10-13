@@ -6,7 +6,6 @@ return {
   dependencies = {
     'MunifTanjim/nui.nvim',
   },
-  cmd = "Neotree",
   init = function () vim.g.neo_tree_remove_legacy_commands = true end,
   opts = function ()
     return {
@@ -158,5 +157,8 @@ return {
       },
     }
   end,
+  keys = {
+    { '<leader>e', mode = 'n', '<cmd>Neotree current toggle reveal<cr>', desc = 'Toggle NeoTree' }
+  }
 }
 

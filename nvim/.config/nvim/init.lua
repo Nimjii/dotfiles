@@ -103,6 +103,9 @@ require('lazy').setup({
     opts = {
       default_keymaps = false,
     },
+    keys = {
+      { '<leader>z', mode = 'n', function () require('maximize').toggle() end, desc = 'Toggle split maximization' },
+    },
   },
 
   {
@@ -184,9 +187,6 @@ vim.keymap.set({ 'n' }, '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Res
 vim.keymap.set({ 'n' }, '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Resize split right' })
 vim.keymap.set({ 'n' }, '<C-s>', '<C-w>s', { desc = 'Create horizontal split' })
 vim.keymap.set({ 'n' }, '<C-v>', '<C-w>v', { desc = 'Create vertical split' })
-
-vim.keymap.set({ 'n' }, '<leader>e', '<cmd>Neotree current toggle reveal<cr>', { desc = 'Toggle NeoTree' })
-vim.keymap.set({ 'n' }, '<leader>z', function () require('maximize').toggle() end, { desc = 'Toggle split maximization' })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
