@@ -24,7 +24,6 @@ syn match typoscriptCurly "[{}]" containedin=typoscriptDefBlock
 syn match typoscriptDelimiter "|" contained containedin=typoscriptMultiLineStringInner,typoscriptMultiLineStringOuter,typoscriptRightString
 syn match typoscriptDot "?\=\." containedin=typoscriptLeft,typoscriptRightRef
 syn match typoscriptEscapedDot "\\\." contained containedin=typoscriptLeft,typoscriptRightRef
-syn match typoscriptLeft "^[^\[\]{}<>=@][^{}<>=@:]*[:({}<>=]"me=e-1 contained containedin=typoscriptDef,typoscriptDefBlock,typoscriptDefString
 syn match typoscriptMethod "\h\+\((.*)\)\@="
 syn match typoscriptNumber "\d\+\(\.\d\+\)\="
 syn match typoscriptOperator "[:!=<>&|]"
@@ -40,6 +39,7 @@ syn region typoscriptDef start="^[^\[\]\/{}<>=@#]" end="[<>][^\]]*$" oneline kee
 syn region typoscriptDefBlock start="^[^\[\]\/{}<>=@#]" end="[{(]$" oneline keepend
 syn region typoscriptDefString start="^[^\[\]\/{}<>=@#]" end="[^<>=]=[^=<].*$" oneline keepend
 syn region typoscriptInclude start="@import" end="$" oneline keepend
+syn region typoscriptLeft start="^[^\[\]{}<>=@]" end="\(:=\|>\|<\|=\|=<\|[({}]\)"me=e-1 contained containedin=typoscriptDef,typoscriptDefBlock,typoscriptDefString
 syn region typoscriptMultiLineStringInner start="(" end=")" contained containedin=typoscriptMultiLineStringInner,typoscriptMultiLineStringOuter extend
 syn region typoscriptMultiLineStringOuter matchgroup=Delimiter start="(" end=")" contained containedin=typoscriptDefBlock extend fold
 syn region typoscriptRightRef matchgroup=Delimiter start="\(>\|=\{,1}<\)" end="$" contained containedin=typoscriptDef
