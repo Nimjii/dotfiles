@@ -55,7 +55,7 @@ hi def link typoscriptComment			Comment
 hi def link typoscriptComparisonOperator	Operator
 hi def link typoscriptConditionInner		Conditional
 hi def link typoscriptConditionOuter		Conditional
-hi def link typoscriptConstant			Identifier
+hi def link typoscriptConstant			Constant
 hi def link typoscriptCurly			Delimiter
 hi def link typoscriptDelimiter			Delimiter
 hi def link typoscriptDot			Ignore
