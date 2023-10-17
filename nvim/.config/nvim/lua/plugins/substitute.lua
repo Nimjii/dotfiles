@@ -5,19 +5,19 @@ return {
   dependencies = {
     'gbprod/yanky.nvim',
   },
-  opts = {
-    exchange = {
+  config = function ()
+    require('substitute').setup({
+      exchange = {
+        preserve_cursor_position = true,
+      },
+      highlight_substituted_text = {
+        enabled = false,
+      },
+      on_substitute = require('yanky.integration').substitute(),
       preserve_cursor_position = true,
-    },
-    highlight_substituted_text = {
-      enabled = false,
-    },
-    on_substitute = function ()
-      require('yanky.integration').substitute()
-    end,
-    preserve_cursor_position = true,
-    yank_substituted_text = true,
-  },
+      yank_substituted_text = false,
+    })
+  end,
   keys = {
     { 'm', mode = { 'n' }, function () require('substitute').operator() end, desc = 'Substitute', noremap = true },
     { 'mm', mode = { 'n' }, function () require('substitute').line() end, desc = 'Substitute line', noremap = true },
