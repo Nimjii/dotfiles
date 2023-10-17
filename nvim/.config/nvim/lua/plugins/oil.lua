@@ -3,34 +3,10 @@
 return {
   'stevearc/oil.nvim',
   dependencies = {
-    'folke/which-key.nvim',
     'nvim-tree/nvim-web-devicons',
   },
-  opts = function (_, opts)
-    require('which-key').register({
-      o = { function () vim.cmd('Oil') end, 'Open oil in current directory'},
-      O = {
-        function ()
-          require('utils.telescope').oil_picker(
-            {
-              show_preview = true,
-              hidden = false,
-              no_ignore = false,
-            }
-          )
-        end,
-        'Open oil in specific directory',
-      },
-    }, { prefix = '<leader>' })
-
-    opts.view_options = {
-      show_hidden = true,
-      is_always_hidden = function (name)
-        return name == '.DS_Store'
-      end
-    }
-
-    opts.keymaps = {
+  opts = {
+    keymaps = {
       ['<C-b>'] = 'actions.preview_scroll_up',
       ['<C-f>'] = 'actions.preview_scroll_down',
       ['<C-h>'] = false,
@@ -48,9 +24,30 @@ return {
         desc = 'Open in finder',
         nowait = true,
       },
-    }
-
-    return opts
-  end,
+    },
+    view_options = {
+      show_hidden = true,
+      is_always_hidden = function (name)
+        return name == '.DS_Store'
+      end
+    },
+  },
+  keys = {
+    { '<leader>o', mode = 'n', function () vim.cmd('Oil') end, desc = 'Open oil in current directory' },
+    {
+      '<leader>O',
+      mode = 'n',
+      function ()
+        require('utils.telescope').oil_picker(
+          {
+            show_preview = true,
+            hidden = false,
+            no_ignore = false,
+          }
+        )
+      end,
+      desc = 'Open oil in current directory'
+    },
+  },
 }
 

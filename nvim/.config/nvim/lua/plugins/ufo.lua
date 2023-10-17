@@ -31,7 +31,6 @@ end
 return {
   'kevinhwang91/nvim-ufo',
   dependencies = {
-    'folke/which-key.nvim',
     'kevinhwang91/promise-async',
   },
   opts = {

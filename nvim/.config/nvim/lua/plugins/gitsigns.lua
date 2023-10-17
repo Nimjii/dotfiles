@@ -1,11 +1,8 @@
 -- gitsigns.lua
 
 return {
-  -- Adds git related signs to the gutter, as well as utilities for managing changes
   'lewis6991/gitsigns.nvim',
-  dependencies = {
-    'folke/which-key.nvim',
-  },
+  event = 'BufEnter',
   opts = {
     signs = {
       add = { text = '+' },
@@ -14,40 +11,42 @@ return {
       topdelete = { text = '‾' },
       changedelete = { text = '~' },
     },
-    on_attach = function(bufnr)
-      require('which-key').register({
-        h = {
-          name = ' Hunk Actions',
-          v = { require('gitsigns').preview_hunk, 'Preview Hunk' },
-          r = { require('gitsigns').reset_hunk, 'Reset Hunk' },
-          s = { require('gitsigns').stage_hunk, 'Stage Hunk' },
-          u = { require('gitsigns').undo_stage_hunk, 'Undo Stage' },
-          d = { require('gitsigns').diffthis, 'Show Diff' },
-        },
-      }, { prefix = '<leader>'})
-
-      vim.keymap.set('n', ']h', function ()
+  },
+  keys = {
+    { '<leader>hv', mode = 'n', function () require('gitsigns').preview_hunk() end, desc = 'Preview hunk' },
+    { '<leader>hr', mode = 'n', function () require('gitsigns').reset_hunk() end, desc = 'Reset hunk' },
+    { '<leader>hs', mode = 'n', function () require('gitsigns').stage_hunk() end, desc = 'Stage hunk' },
+    { '<leader>hu', mode = 'n', function () require('gitsigns').undo_stage_hunk() end, desc = 'Undo stage' },
+    { '<leader>hd', mode = 'n', function () require('gitsigns').diffthis() end, desc = 'Show diff' },
+    {
+      ']h',
+      mode = 'n',
+      function ()
         if vim.wo.diff then return ']h' end
         vim.schedule(function ()
           require('gitsigns').next_hunk()
-          vim.wait(25)
+          vim.wait(10)
           vim.cmd('norm zz')
         end)
         return '<Ignore>'
-      end, { buffer = bufnr, desc = 'Go to next hunk' })
-
-      vim.keymap.set('n', '[h', function ()
+      end,
+      desc = 'Go to next hunk',
+    },
+    {
+      '[h',
+      mode = 'n',
+      function ()
         if vim.wo.diff then return '[h' end
         vim.schedule(function ()
           require('gitsigns').prev_hunk()
-          vim.wait(25)
+          vim.wait(10)
           vim.cmd('norm zz')
         end)
         return '<Ignore>'
-      end, { buffer = bufnr, desc = 'Go to previous hunk' })
-
-      vim.keymap.set({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'inner hunk'})
-    end,
+      end,
+      desc = 'Go to previous hunk',
+    },
+    { 'ih', mode = { 'o', 'x' }, ':<C-U>Gitsigns select_hunk<CR>', desc = 'inner hunk' },
   },
 }
 

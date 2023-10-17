@@ -21,9 +21,11 @@ return {
         return false
       end
 
-      for _, layout in pairs(require('dapui.windows').layouts) do
-        if layout:is_open() then
-          return false
+      if require('lazy.core.config').plugins['nvim-dap-ui']._.loaded then
+        for _, layout in pairs(require('dapui.windows').layouts) do
+          if layout:is_open() then
+            return false
+          end
         end
       end
       return true

@@ -6,7 +6,7 @@ require 'filetypes'
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -125,9 +125,6 @@ require('lazy').setup({
   },
 }, {})
 
-pcall(require('telescope').load_extension, 'fzf')
-pcall(require('telescope').load_extension, 'yank_history')
-
 --[[ Setting options ]]
 
 --See `:help vim.o`
@@ -196,17 +193,19 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', ']t', function () vim.cmd.tabnext() end, { desc = 'Next tab' })
 vim.keymap.set('n', '[t', function () vim.cmd.tabprevious() end, { desc = 'Previous tab' })
 
--- Quickfix mappings
+-- Mapping groups
 require('which-key').register({
-  b = { '<cmd>copen<cr>', 'Open quickfix' },
-  B = { '<cmd>cclose<cr>', 'Close quickfix' },
-  Q = {
-    name = ' Quickfix',
-    n = { '<cmd>cnext<cr>', 'Next quickfix entry' },
-    p = { '<cmd>cprevious<cr>', 'Previous quickfix entry' },
-    N = { '<cmd>cnfile<cr>', 'Next file in quickfix list' },
-    P = { '<cmd>cpfile<cr>', 'Previous file in quickfix list' },
-  },
+  a = { name = '󰫍 Annotations' },
+  d = { name = ' Debugger' },
+  f = { name = '󰍉 Find' },
+  F = { name = ' Files' },
+  g = { name = '󰛢 Grapple' },
+  G = { name = ' Git blame' },
+  h = { name = ' Hunk Actions' },
+  n = { name = '󱚌 Neorg' },
+  p = { name = ' Portal' },
+  Q = { name = ' Quickfix' },
+  t = { name = ' ToggleTerm' },
 }, { prefix = '<leader>' })
 
 -- Buffer mappings
@@ -255,8 +254,6 @@ local on_attach = function(_, bufnr)
   nmap('gr', vim.lsp.buf.references, 'Goto References')
   nmap('gI', vim.lsp.buf.implementation, 'Goto Implementation')
   nmap('gt', vim.lsp.buf.type_definition, 'Type Definition')
-  nmap('<leader>fS', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
-  nmap('<leader>fD', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
