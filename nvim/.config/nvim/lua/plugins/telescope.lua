@@ -159,7 +159,7 @@ return {
       desc = 'Search in all files',
     },
     {
-      '/',
+      '<leader>/',
       mode = 'n',
       function ()
         require('telescope.builtin').current_buffer_fuzzy_find(
