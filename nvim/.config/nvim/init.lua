@@ -157,6 +157,9 @@ vim.o.wrap = false
 vim.wo.relativenumber= true
 vim.wo.signcolumn= 'yes'
 
+vim.g.t_ZH = '[3m'
+vim.g.t_ZR = '[23m'
+
 vim.g.gitblame_ignored_filetypes = { "lock" }
 vim.g.gitblame_display_virtual_text = 0
 vim.g.gitblame_message_template = "<summary> • <date> • <author>"
