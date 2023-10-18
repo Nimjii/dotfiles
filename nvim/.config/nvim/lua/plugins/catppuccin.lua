@@ -26,6 +26,9 @@ return {
         rainbow_delimiters = false,
         treesitter_context = false,
       },
+      styles = {
+        conditionals = {},
+      },
     })
 
     vim.cmd.colorscheme 'catppuccin'
