@@ -69,33 +69,11 @@ require('lazy').setup({
   },
 
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'catppuccin-macchiato'
-    end,
-  },
-
-  {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     config = function()
       require("nvim-surround").setup();
     end
-  },
-
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-    opts = {
-      indent = {
-        char = '┊',
-      },
-      scope = {
-        enabled = false,
-      },
-    },
   },
 
   {
