@@ -22,8 +22,8 @@ syn match typoscriptComma ","
 syn match typoscriptComment "#.*" containedin=typoscriptLeft
 syn match typoscriptCurly "[{}]" containedin=typoscriptDefBlock
 syn match typoscriptDelimiter "|" contained containedin=typoscriptMultiLineStringInner,typoscriptMultiLineStringOuter,typoscriptRightString
-syn match typoscriptDot "?\=\." containedin=typoscriptLeft,typoscriptRightRef
-syn match typoscriptEscapedDot "\\\." contained containedin=typoscriptLeft,typoscriptRightRef
+syn match typoscriptDot "?\=\\\@<!\." containedin=typoscriptLeft,typoscriptRightRef
+syn match typoscriptEscapedDot "\\\." contained containedin=typoscriptLeft,typoscriptRightRef transparent
 syn match typoscriptMethod "\h\+\((.*)\)\@="
 syn match typoscriptNumber "\d\+\(\.\d\+\)\="
 syn match typoscriptOperator "[:!=<>&|]"
@@ -37,13 +37,13 @@ syn region typoscriptConditionOuter start="\[" end="\]" contains=TOP,typoscriptD
 syn region typoscriptConstant start="{\$" end="}" containedin=typoscriptRightString,typoscriptString oneline
 syn region typoscriptDef start="^[^\[\]\/{}<>=@#]" end="[<>][^\]]*$" oneline keepend
 syn region typoscriptDefBlock start="^[^\[\]\/{}<>=@#]" end="[{(]$" oneline keepend
-syn region typoscriptDefString start="^[^\[\]\/{}<>=@#]" end="[^<>=]=[^=<].*$" oneline keepend
+syn region typoscriptDefString start="^[^\[\]\/{}<>=@#]" end="[<>=]\@<!=[=<]\@!.*$" oneline keepend
 syn region typoscriptInclude start="@import" end="$" oneline keepend
-syn region typoscriptLeft start="^[^\[\]{}<>=@]" end="\(:=\|>\|<\|=\|=<\|[({}]\)"me=e-1 contained containedin=typoscriptDef,typoscriptDefBlock,typoscriptDefString
+syn region typoscriptLeft start="^[^\[\]{}<>=@]" end="\(:=\|>\|<\|=\|=<\|[({}]\)"me=s-1 contained containedin=typoscriptDef,typoscriptDefBlock,typoscriptDefString
 syn region typoscriptMultiLineStringInner start="(" end=")" contained containedin=typoscriptMultiLineStringInner,typoscriptMultiLineStringOuter extend
 syn region typoscriptMultiLineStringOuter matchgroup=Delimiter start="(" end=")" contained containedin=typoscriptDefBlock extend fold
 syn region typoscriptRightRef matchgroup=Delimiter start="\(>\|=\{,1}<\)" end="$" contained containedin=typoscriptDef
-syn region typoscriptRightString matchgroup=Delimiter start=":\{,1}=" end="$" contained containedin=typoscriptDefString contains=typoscriptObject
+syn region typoscriptRightString matchgroup=Delimiter start=":\==" end="$" contained containedin=typoscriptDefString contains=typoscriptObject
 syn region typoscriptString start=/\\\@<!['"]/ end=/\\\@<!['"]/ containedin=typoscriptInclude
 
 hi def link typoscriptAltComment		Comment
@@ -59,7 +59,6 @@ hi def link typoscriptConstant			Constant
 hi def link typoscriptCurly			Delimiter
 hi def link typoscriptDelimiter			Delimiter
 hi def link typoscriptDot			Ignore
-hi def link typoscriptEscapedDot		Constant
 hi def link typoscriptInclude			Include
 hi def link typoscriptLeft			Identifier
 hi def link typoscriptNumber			Number
