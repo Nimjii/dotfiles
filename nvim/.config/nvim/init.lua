@@ -69,14 +69,6 @@ require('lazy').setup({
   },
 
   {
-    "kylechui/nvim-surround",
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup();
-    end
-  },
-
-  {
     'declancm/maximize.nvim',
     opts = {
       default_keymaps = false,
