@@ -8,15 +8,15 @@ return {
     'rcarriga/nvim-notify',
   },
   opts = function (_, opts)
-    vim.keymap.set({"n", "i", "s"}, "<c-f>", function()
+    vim.keymap.set({"n", "i", "s"}, "<C-f>", function()
       if not require("noice.lsp").scroll(4) then
-        return "<c-f>"
+        return "<C-f>zz"
       end
     end, { silent = true, expr = true })
 
-    vim.keymap.set({"n", "i", "s"}, "<c-d>", function()
+    vim.keymap.set({"n", "i", "s"}, "<C-d>", function()
       if not require("noice.lsp").scroll(-4) then
-        return "<c-d>"
+        return "<C-d>zz"
       end
     end, { silent = true, expr = true })
 
