@@ -20,9 +20,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function ()
     local cur_pos = vim.api.nvim_win_get_cursor(0)
 
-    vim.cmd([[%s/\s\+$//e]])
-    vim.cmd([[%s#\%$#\r#e]])
-    vim.cmd([[%s#\(\($\n\)\@<=$\n\)\+\%$##e]])
+    vim.cmd([[silent! exec "undojoin" | keeppatterns %s/\s\+$//e | keeppatterns %s#\%$#\r#e | keeppatterns %s#\(\($\n\)\@<=$\n\)\+\%$##e]])
 
     local last_line = vim.api.nvim_buf_line_count(0)
 
