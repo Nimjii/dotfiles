@@ -2,6 +2,7 @@
 
 return {
   'kevinhwang91/nvim-bqf',
+  event = 'VimEnter',
   dependencies = {
     {
       'junegunn/fzf',
@@ -20,3 +21,4 @@ return {
     { '<leader>QP', mode = 'n', '<cmd>cnprevious<cr>', desc = 'Previous file in quickfix list' },
   },
 }
+
