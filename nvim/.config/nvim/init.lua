@@ -158,6 +158,10 @@ vim.keymap.set({ 'n' }, '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Re
 vim.keymap.set({ 'n' }, '<C-s>', '<C-w>s', { desc = 'Create horizontal split' })
 vim.keymap.set({ 'n' }, '<C-m>', '<C-w>v', { desc = 'Create vertical split' })
 
+-- Mappings for moving lines in visual mode
+vim.keymap.set('v', '<S-j>', ":m '>+1<CR>gv=gv", { desc = 'Move line downwards', silent = true })
+vim.keymap.set('v', '<S-k>', ":m '<-2<CR>gv=gv", { desc = 'Move line upwards', silent = true })
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
