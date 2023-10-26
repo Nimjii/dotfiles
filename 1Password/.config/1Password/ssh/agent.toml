@@ -1,0 +1,8 @@
+# GitHub Key
+[[ssh-keys]]
+vault = "Personal"
+
+# LimeSoda Key
+[[ssh-keys]]
+vault = "LIMESODA"
+

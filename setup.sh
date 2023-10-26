@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # symlink all config files
+stow 1Password -t ~
 stow fish -t ~
 stow git -t ~
 stow nvim -t ~
