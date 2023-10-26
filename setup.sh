@@ -4,6 +4,7 @@
 stow 1Password -t ~
 stow fish -t ~
 stow git -t ~
+stow lazygit -t ~
 stow nvim -t ~
 stow ssh -t ~
 stow starship -t ~
