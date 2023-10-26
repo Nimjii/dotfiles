@@ -1,11 +1,12 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 set -gx PATH /Library/Frameworks/Python.framework/Versions/2.7/bin $PATH
-set -gx PATH /Users/l.spreitzer/Library/Python/3.11/bin $PATH
-set -gx PATH $PATH /Users/l.spreitzer/Library/Application Support/JetBrains/Toolbox/scripts
-set -gx PATH $PATH /Users/l.spreitzer/.cargo/bin
-set -gx XDG_CONFIG_HOME /Users/l.spreitzer/.config
-set -gx NVM_DIR /Users/l.spreitzer/.nvm
+set -gx PATH ~/Library/Python/3.11/bin $PATH
+set -gx PATH $PATH ~/Library/Application\ Support/JetBrains/Toolbox/scripts
+set -gx PATH $PATH ~/.cargo/bin
+set -gx XDG_CONFIG_HOME ~/.config
+set -gx NVM_DIR ~/.nvm
+set -gx SSH_AUTH_SOCK ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 if status is-interactive
 	starship init fish | source
@@ -18,3 +19,4 @@ if status is-interactive
 	alias vi "nvim"
 	fish_default_key_bindings
 end
+
