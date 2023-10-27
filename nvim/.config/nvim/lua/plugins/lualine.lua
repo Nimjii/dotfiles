@@ -26,6 +26,11 @@ local function maximize_status()
   return vim.t.maximized and '󰁌' or ''
 end
 
+local function pin_status()
+  local buf = vim.api.nvim_get_current_buf()
+  return require('hbac.state').is_pinned(buf) and '' or ''
+end
+
 return {
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
@@ -70,6 +75,7 @@ return {
       lualine_c = {},
       lualine_x = {
         maximize_status,
+        pin_status,
         {
           'filename',
           newfile_status = true,

@@ -177,6 +177,7 @@ require('which-key').register({
   g = { name = '󰛢 Grapple' },
   G = { name = ' Git blame' },
   h = { name = ' Hunk Actions' },
+  H = { name = '󰤱 Pins' },
   n = { name = '󱚌 Neorg' },
   p = { name = ' Portal' },
   Q = { name = ' Quickfix' },
