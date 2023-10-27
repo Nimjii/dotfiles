@@ -226,12 +226,6 @@ local on_attach = function(_, bufnr)
     },
   }, { buffer = bufnr, prefix = '<leader>'})
 
-  nmap('gd', vim.lsp.buf.definition, 'Goto Definition')
-  nmap('gD', vim.lsp.buf.declaration, 'Goto Declaration')
-  nmap('gr', vim.lsp.buf.references, 'Goto References')
-  nmap('gI', vim.lsp.buf.implementation, 'Goto Implementation')
-  nmap('gt', vim.lsp.buf.type_definition, 'Type Definition')
-
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
 end

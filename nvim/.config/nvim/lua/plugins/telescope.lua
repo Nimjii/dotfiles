@@ -73,6 +73,11 @@ return {
     end
   end,
   keys = {
+    { 'gd', vim.lsp.buf.definition, desc = 'Go to definition' },
+    { 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration' },
+    { 'gI', vim.lsp.buf.implementation, desc = 'Go to implementation' },
+    { 'gr', vim.lsp.buf.references, desc = 'Go to references' },
+    { 'gt', vim.lsp.buf.type_definition, desc = 'Type definition' },
     { '<leader>fc', mode = 'n', function () require('telescope.builtin').git_commits() end, desc = 'Find commits' },
     { '<leader>fb', mode = 'n', function () require('telescope.builtin').git_branches() end, desc = 'Find branches' },
     { '<leader>fd', mode = 'n', function () require('telescope.builtin').diagnostics() end, desc = 'Find diagnostics' },
