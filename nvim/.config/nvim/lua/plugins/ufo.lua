@@ -30,6 +30,7 @@ end
 
 return {
   'kevinhwang91/nvim-ufo',
+  event = 'VeryLazy',
   dependencies = {
     'kevinhwang91/promise-async',
   },
@@ -40,8 +41,9 @@ return {
     end,
   },
   keys = {
-    { 'zR', mode = 'n', function () require('ufo').openAllFolds() end, desc = 'Open all folds' },
     { 'zM', mode = 'n', function () require('ufo').closeAllFolds() end, desc = 'Close all folds' },
     { 'zp', mode = 'n', function () require('ufo').peekFoldedLinesUnderCursor() end, desc = 'Preview fold under cursor' },
+    { 'zR', mode = 'n', function () require('ufo').openAllFolds() end, desc = 'Open all folds' },
   }
 }
+
