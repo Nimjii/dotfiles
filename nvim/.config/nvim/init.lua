@@ -96,10 +96,8 @@ require('lazy').setup({
 --[[ Setting options ]]
 
 --See `:help vim.o`
-vim.o.autoindent = true
 vim.o.backspace = 'indent,eol,start'
 vim.o.breakindent = true
-vim.o.cindent = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.copyindent = true
 vim.o.cursorline = true

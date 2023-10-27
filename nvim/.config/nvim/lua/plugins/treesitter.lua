@@ -26,7 +26,7 @@ return {
             return true
           end
         end,
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = { 'html' },
       },
       incremental_selection = {
         enable = true,
@@ -35,6 +35,10 @@ return {
           node_incremental = '<C-G>',
           node_decremental = '<C-Q>',
         },
+      },
+      indent = {
+        enable = true,
+        disable = { 'html' },
       },
       textobjects = {
         select = {
