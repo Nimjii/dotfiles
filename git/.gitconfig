@@ -3,9 +3,14 @@
 [user]
 	name = Lukas Spreitzer
 	email = l.spreitzer@limesoda.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEi+PliWQHfzEd4cHht/w2gzX1bJ1kp/5SR8QFWnIKR8
 [core]
 	autocrlf = input
 	attributesfile = /Users/l.spreitzer/.gitattributes
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [pull]
 	rebase = true
 [delta]
@@ -13,3 +18,4 @@
 [diff "lockb"]
 	textconv = bun
 	binary = true
+
