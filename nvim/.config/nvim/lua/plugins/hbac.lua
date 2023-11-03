@@ -3,13 +3,13 @@
 return {
   'axkirillov/hbac.nvim',
   event = 'VeryLazy',
-  dependencies = {
-    'nvim-telescope/telescope.nvim',
-  },
   opts = {
     close_command = function(bufnr)
       pcall(vim.api.nvim_buf_delete, bufnr, {})
     end,
+    telescope = {
+      ignore_current_buffer = true,
+    },
   },
   keys = {
     { '<leader>HC', mode = 'n', function () require('hbac').close_unpinned() end, desc = 'Close all unpinned buffers' },

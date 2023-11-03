@@ -4,6 +4,7 @@ return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
   dependencies = {
+    'axkirillov/hbac.nvim',
     'folke/noice.nvim',
     'gbprod/yanky.nvim',
     'nvim-lua/plenary.nvim',
@@ -57,6 +58,7 @@ return {
     })
 
     pcall(require('telescope').load_extension, 'fzf')
+    pcall(require('telescope').load_extension, 'hbac')
     pcall(require('telescope').load_extension, 'noice')
     pcall(require('telescope').load_extension, 'yank_history')
 
@@ -91,7 +93,8 @@ return {
     { '<leader>fD', mode = 'n', function () require('telescope.builtin').lsp_dynamic_workspace_symbols() end, desc = 'Workspace symbols' },
     { '<leader>fo', mode = 'n', function () require('telescope.builtin').oldfiles() end, desc = 'Find recently opened files' },
     { '<leader>fh', mode = 'n', function () require('telescope.builtin').marks() end, desc = 'Find marks' },
-    { '<leader>fy', mode = 'n', '<cmd>Telescope yank_history<cr>', desc = 'Yank history' },
+    { '<leader>fp', mode = 'n', function () require('telescope').extensions.hbac.buffers() end, desc = 'HBAC Buffers' },
+    { '<leader>fy', mode = 'n', function () require('telescope').extensions.yank_history.yank_history() end, desc = 'Yank history' },
     { '<leader>f<CR>', mode = 'n', function () require('telescope.builtin').resume() end, desc = 'Resume last search' },
     { '<leader><space>', mode = 'n', function () require('utils.telescope').buffers() end, desc = 'Find existing buffers' },
     {
