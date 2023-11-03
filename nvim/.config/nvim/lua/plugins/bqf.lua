@@ -18,7 +18,7 @@ return {
     { '<leader>Qn', mode = 'n', '<cmd>cnext<cr>', desc = 'Next quickfix entry' },
     { '<leader>Qp', mode = 'n', '<cmd>cprevious<cr>', desc = 'Previous quickfix entry' },
     { '<leader>QN', mode = 'n', '<cmd>cnfile<cr>', desc = 'Next file in quickfix list' },
-    { '<leader>QP', mode = 'n', '<cmd>cnprevious<cr>', desc = 'Previous file in quickfix list' },
+    { '<leader>QP', mode = 'n', '<cmd>cpfile<cr>', desc = 'Previous file in quickfix list' },
   },
 }
 
