@@ -96,7 +96,7 @@ return {
           return false
         end
 
-        return true
+        return not vim.g.cmp_disable
       end,
       window = {
         completion = cmp.config.window.bordered(border_opts),
@@ -124,6 +124,10 @@ return {
         select = false,
       },
       mapping = cmp.mapping.preset.insert {
+        ['<C-c>'] = function()
+          cmp.abort()
+          vim.g.cmp_disable = true
+        end,
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -188,5 +192,14 @@ return {
         }
       )
     })
+
+    cmp.event:on('menu_opened', function ()
+      vim.b.copilot_suggestion_hidden = true
+    end)
+
+    cmp.event:on('menu_closed', function ()
+      vim.b.copilot_suggestion_hidden = false
+    end)
   end
 }
+

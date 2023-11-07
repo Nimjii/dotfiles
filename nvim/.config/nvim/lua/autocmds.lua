@@ -1,5 +1,13 @@
 -- @module utils.autocmds
 
+-- [[ Enable cmp on insert ]]
+vim.api.nvim_create_autocmd('InsertEnter', {
+  pattern = '*',
+  callback = function ()
+    vim.g.cmp_disable = false
+  end,
+})
+
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {

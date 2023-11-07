@@ -180,6 +180,7 @@ vim.keymap.set('n', '[t', function () vim.cmd.tabprevious() end, { desc = 'Previ
 -- Mapping groups
 require('which-key').register({
   a = { name = '󰫍 Annotations' },
+  c = { name = ' Copilot' },
   d = { name = ' Debugger' },
   f = { name = '󰍉 Find' },
   F = { name = ' Files' },
