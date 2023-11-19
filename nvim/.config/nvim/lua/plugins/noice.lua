@@ -43,6 +43,12 @@ return {
         inc_rename = true,
         lsp_doc_border = true,
       },
+      routes = {
+        {
+          filter = { max_width = 0 },
+          opts = { skip = true },
+        },
+      },
       views = {
         cmdline_popup = {
           filter_options = {},
