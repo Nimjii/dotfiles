@@ -7,9 +7,15 @@ return {
     jump = {
       autojump = true,
     },
+    label = {
+      rainbow = {
+        enabled = true,
+      },
+    },
     modes = {
       char = {
         autohide = true,
+        jump_labels = true,
         multi_line = false,
       },
     },
@@ -23,3 +29,4 @@ return {
     { 'r', mode = { 'o', 'x' }, function () require('flash').treesitter_search() end, desc = 'Treesitter search' },
   },
 }
+
