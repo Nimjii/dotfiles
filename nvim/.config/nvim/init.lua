@@ -91,6 +91,17 @@ require('lazy').setup({
       { '<leader>Fp', mode = { 'n' }, '<cmd>MarkdownPreviewToggle<cr>', desc = 'Markdown preview' },
     },
   },
+
+  {
+    'FredeEB/tardis.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = true,
+    keys = {
+      { '<leader>T', mode = { 'n' }, function () require('tardis-nvim').tardis() end, desc = 'Open Tardis' },
+    },
+  },
 }, {})
 
 --[[ Setting options ]]
