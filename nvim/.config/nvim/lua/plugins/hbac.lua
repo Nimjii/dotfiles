@@ -3,6 +3,7 @@
 return {
   'axkirillov/hbac.nvim',
   event = 'VeryLazy',
+  enabled = false,
   opts = {
     close_command = function(bufnr)
       pcall(vim.api.nvim_buf_delete, bufnr, {})
