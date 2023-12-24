@@ -163,7 +163,7 @@ vim.keymap.set({ 'n' }, '<C-Down>', '<cmd>resize +2<CR>', { desc = 'Resize split
 vim.keymap.set({ 'n' }, '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Resize split left' })
 vim.keymap.set({ 'n' }, '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Resize split right' })
 vim.keymap.set({ 'n' }, '<C-s>', '<C-w>s', { desc = 'Create horizontal split' })
-vim.keymap.set({ 'n' }, '<C-m>', '<C-w>v', { desc = 'Create vertical split' })
+vim.keymap.set({ 'n' }, '<C-x>', '<C-w>v', { desc = 'Create vertical split' })
 
 -- automatic indenting when entering insert mode
 vim.keymap.set({ 'n' }, 'i', function ()
