@@ -18,4 +18,6 @@
 [diff "lockb"]
 	textconv = bun
 	binary = true
+[alias]
+	lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(Yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
