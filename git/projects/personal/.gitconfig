@@ -1,0 +1,7 @@
+[user]
+	name = Nimjii
+	email = lspreitzer525@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEi+PliWQHfzEd4cHht/w2gzX1bJ1kp/5SR8QFWnIKR8
+[commit]
+	gpgSign = true
+
