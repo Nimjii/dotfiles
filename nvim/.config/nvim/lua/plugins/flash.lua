@@ -14,8 +14,8 @@ return {
     },
     modes = {
       char = {
-        autohide = true,
-        jump_labels = true,
+        autohide = false,
+        jump_labels = false,
         multi_line = false,
       },
     },
