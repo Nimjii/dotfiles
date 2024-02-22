@@ -45,28 +45,28 @@ return {
               name = "NXT",
               hostname = "www-nxtcontrol-com.ddev.site",
               pathMappings = {
-                ["/var/www/html"] = "/Users/l.spreitzer/PhpstormProjects/www-nxtcontrol-com",
+                ["/var/www/html"] = "/Users/l.spreitzer/projects/work/www-nxtcontrol-com",
               },
             }),
             vim.tbl_deep_extend('force', defaults, {
               name = "OeSV",
               hostname = "www-segelverband-at.ddev.site",
               pathMappings = {
-                ["/var/www/html"] = "/Users/l.spreitzer/PhpstormProjects/segelverband-at",
+                ["/var/www/html"] = "/Users/l.spreitzer/projects/work/segelverband-at",
               },
             }),
             vim.tbl_deep_extend('force', defaults, {
               name = "PVÖ",
               hostname = "www-pvoe-at.ddev.site",
               pathMappings = {
-                ["/var/www/html"] = "/Users/l.spreitzer/PhpstormProjects/www-pvoe-at/src",
+                ["/var/www/html"] = "/Users/l.spreitzer/projects/work/www-pvoe-at/src",
               },
             }),
             vim.tbl_deep_extend('force', defaults, {
               name = "VPG",
               hostname = "www-viennapass-de.ddev.site",
               pathMappings = {
-                ["/var/www/html"] = "/Users/l.spreitzer/PhpstormProjects/www-viennapass-de/src",
+                ["/var/www/html"] = "/Users/l.spreitzer/projects/work/www-viennapass-de/src",
               },
             }),
           }
