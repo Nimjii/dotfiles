@@ -28,17 +28,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '*' },
   callback = function ()
-    local cur_pos = vim.api.nvim_win_get_cursor(0)
-
-    vim.cmd([[silent! exec "undojoin" | keeppatterns %s/\s\+$//e | keeppatterns %s#\%$#\r#e | keeppatterns %s#\(\($\n\)\@<=$\n\)\+\%$##e]])
-
-    local last_line = vim.api.nvim_buf_line_count(0)
-
-    if cur_pos[1] > last_line then
-      vim.api.nvim_win_set_cursor(0, { last_line, cur_pos[2] })
-    else
-      vim.api.nvim_win_set_cursor(0, cur_pos)
-    end
+    require('utils').trim_whitespaces()
+    require('utils').trim_empty_lines()
   end,
 })
 
