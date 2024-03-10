@@ -2,14 +2,16 @@
 
 return {
   'cbochs/grapple.nvim',
+  cmd = "Grapple",
   dependencies = {
-    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
   },
   opts = {
-    scope = 'directory'
+    scope = 'git'
   },
   keys = {
     { '<leader>gt', mode = 'n', function () require('grapple').toggle() end, desc = 'Toggle tag' },
-    { '<leader>gp', mode = 'n', function () require('grapple').popup_tags() end, desc = 'Tags popup' },
+    { '<leader>gp', mode = 'n', function () require('grapple').toggle_tags() end, desc = 'Tags popup' },
   },
 }
+

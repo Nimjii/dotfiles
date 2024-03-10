@@ -18,7 +18,7 @@ local function get_lsps()
 end
 
 local function get_grapple()
-  local key = require("grapple").key()
+  local key = require("grapple").name_or_index()
   return "󰛢 [" .. key .. "]"
 end
 

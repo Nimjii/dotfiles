@@ -11,7 +11,7 @@ return {
   keys = {
     { '<leader>pc', mode = 'n', function () require('portal.builtin').changelist.tunnel_backward() end, desc = 'Changelist backwards' },
     { '<leader>pC', mode = 'n', function () require('portal.builtin').changelist.tunnel_forward() end, desc = 'Changelist forwards' },
-    { '<leader>pg', mode = 'n', function () require('portal.builtin').grapple.tunnel_backward() end, desc = 'Grapple backwors' },
+    { '<leader>pg', mode = 'n', function () require('portal.builtin').grapple.tunnel_backward() end, desc = 'Grapple backwards' },
     { '<leader>pG', mode = 'n', function () require('portal.builtin').grapple.tunnel_forward() end, desc = 'Grapple forwards' },
     {
       '<leader>pj',
@@ -39,3 +39,4 @@ return {
     },
   },
 }
+
