@@ -17,10 +17,26 @@ return {
     },
   },
   config = function ()
+    local actions = require('telescope.actions')
+
     require('telescope').setup({
       defaults = {
         buffer_previewer_maker = require('utils.telescope').previewer_maker,
         path_display = { 'truncate' },
+        mappings = {
+          i = {
+            ['<M-f>'] = actions.nop,
+            ['<M-k>'] = actions.nop,
+            ['<M-q>'] = actions.nop,
+            ['<C-z>'] = actions.send_selected_to_qflist + actions.open_qflist,
+          },
+          n = {
+            ['<M-f>'] = actions.nop,
+            ['<M-k>'] = actions.nop,
+            ['<M-q>'] = actions.nop,
+            ['<C-z>'] = actions.send_selected_to_qflist + actions.open_qflist,
+          },
+        },
         preview = {
           mime_hook = function (filepath, bufnr, opts)
             local is_image = function (path)
