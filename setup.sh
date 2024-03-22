@@ -4,6 +4,7 @@
 stow 1Password -t ~
 stow fish -t ~
 stow git -t ~
+stow karabiner -t ~
 stow lazygit -t ~
 stow nvim -t ~
 stow ssh -t ~
@@ -31,3 +32,4 @@ mkdir ~/.local/nvim	&&
 nvim --headless "+Lazy! sync" +qa
 nvim --headless "+MasonUpdate" +qa
 nvim --headless "+TSUpdate" +qa
+
