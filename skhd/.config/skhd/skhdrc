@@ -1,0 +1,68 @@
+#!/usr/bin/env fish
+
+# --- windows --- #
+# focus next display by arrangement index
+hyper - m : yabai -m display --focus next || yabai -m display --focus first
+# focus previous display by arrangement index
+hyper - n : yabai -m display --focus prev || yabai -m display --focus last
+
+# --- spaces --- #
+# focus next space or rotate back to first space
+hyper - l : yabai -m space --focus next || yabai -m space --focus first
+# focus previous space or rotate forward to last space
+hyper - h : yabai -m space --focus prev || yabai -m space --focus last
+# move space to next display by arrangement index
+hyper - o : yabai -m space --move next || yabai -m space --move first
+# move space to previous display by arrangement index
+hyper - y : yabai -m space --move prev || yabai -m space --move last
+# swap with next space by arrangement index (})
+hyper - 0x1D : yabai -m space --swap next || yabai -m space --swap first
+# swap with previous space by arrangement index ({)
+hyper - 0x1A : yabai -m space --swap prev || yabai -m space --swap last
+# create space for current display ([)
+hyper - 0x1C : yabai -m space --create && yabai -m space --focus last
+# destroy current space and focus first space on current display (])
+hyper - 0x19 : yabai -m space --destroy && yabai -m window --focus last
+# balance windows vertically and horizontally
+hyper - k : yabai -m space --balance
+# flip window tree horizontally
+hyper - i : yabai -m space --mirror x-axis
+# flip window tree vertically
+hyper - u : yabai -m space --mirror y-axis
+# rotate window tree clockwise
+hyper - j : yabai -m space --rotate 90
+
+# --- windows --- #
+# focus next window to the right
+hyper - f : yabai -m window --focus east
+# focus next window to the left
+hyper - a : yabai -m window --focus west
+# focus next window upwards
+hyper - d : yabai -m window --focus north
+# focus next window downwards
+hyper - s : yabai -m window --focus south
+# swap with next window to the right
+hyper - r : yabai -m window --swap east
+# swap with next window to the left
+hyper - q : yabai -m window --swap west
+# swap with next window upwards
+hyper - e : yabai -m window --swap north
+# swap with next window downwards
+hyper - w : yabai -m window --swap south
+# move to next space by arrangement index
+hyper - v : begin; yabai -m window --space next || yabai -m window --space first; end			\
+	&& begin; yabai -m space --focus next || yabai -m space --focus first; end					\
+	&& yabai -m window --focus last
+# move to previous space by arrangement index
+hyper - z : begin; yabai -m window --space prev || yabai -m window --space last; end			\
+	&& begin; yabai -m space --focus prev || yabai -m space --focus last; end					\
+	&& yabai -m window --focus last
+# close current window
+hyper - x: yabai -m window --close
+# zoom current window to fullscreen
+hyper - g : yabai -m window --toggle zoom-fullscreen
+# toggle current window float
+hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+# toggle sticky picture in picture
+hyper - p : yabai -m window --toggle sticky --toggle pip
+
