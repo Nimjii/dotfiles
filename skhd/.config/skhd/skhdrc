@@ -5,6 +5,12 @@
 hyper - m : yabai -m display --focus next || yabai -m display --focus first
 # focus previous display by arrangement index
 hyper - n : yabai -m display --focus prev || yabai -m display --focus last
+# focus first display by arrangement index
+hyper - 1 : yabai -m display --focus 1
+# focus second display by arrangement index
+hyper - 2 : yabai -m display --focus 2
+# focus third display by arrangement index
+hyper - 3 : yabai -m display --focus 3
 
 # --- spaces --- #
 # focus next space or rotate back to first space
