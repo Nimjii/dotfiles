@@ -267,8 +267,8 @@ local servers = {
   },
 
   intelephense = {
-    ['intelephense.files.maxSize'] = 1000000,
-    ['intelephense.maxMemory'] = 2048,
+    ['intelephense.files.maxSize'] = 2097152,   -- 2MB
+    ['intelephense.maxMemory'] = 4096,
   },
 
   lua_ls = {
