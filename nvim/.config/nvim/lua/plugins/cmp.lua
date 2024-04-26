@@ -47,16 +47,6 @@ return {
         end,
       },
     },
-
-    {
-      'zbirenbaum/copilot-cmp',
-      dependencies = {
-        'zbirenbaum/copilot.lua',
-      },
-      config = function ()
-        require('copilot_cmp').setup()
-      end
-    }
   },
   config = function ()
     local cmp = require('cmp')
@@ -155,7 +145,6 @@ return {
       },
       sources = cmp.config.sources {
         { name = 'nvim_lsp', priority = 1000 },
-        { name = 'copilot', priority = 1000 },
         { name = 'luasnip', priority = 900 },
         { name = 'nvim_lsp_signature_help', priority = 800 },
         { name = 'buffer', priority = 700 },
