@@ -1,74 +1,102 @@
 #!/usr/bin/env fish
 
-# --- windows --- #
-# focus next display by arrangement index
-hyper - m : yabai -m display --focus next || yabai -m display --focus first
-# focus previous display by arrangement index
-hyper - n : yabai -m display --focus prev || yabai -m display --focus last
-# focus first display by arrangement index
-hyper - 1 : yabai -m display --focus 1
-# focus second display by arrangement index
-hyper - 2 : yabai -m display --focus 2
-# focus third display by arrangement index
-hyper - 3 : yabai -m display --focus 3
+# TODO: move window to new space
+
+# --- displays --- #
+# focus first display
+hyper - 1 : set index (yabai -m query --displays | jq 'sort_by(.frame.x)[0].index')			\
+	&& yabai -m display --focus "$index"
+# focus second display
+hyper - 2 : set index (yabai -m query --displays | jq 'sort_by(.frame.x)[1].index')			\
+	&& yabai -m display --focus "$index"
+# focus third display
+hyper - 3 : set index (yabai -m query --displays | jq 'sort_by(.frame.x)[2].index')			\
+	&& yabai -m display --focus "$index"
 
 # --- spaces --- #
-# focus next space or rotate back to first space
-hyper - l : yabai -m space --focus next || yabai -m space --focus first
+# create space for current display
+hyper - c : yabai -m space --create																						\
+	&& set index (yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')			\
+	&& yabai -m space --focus "$index"
+# destroy current space and focus first space on current display
+hyper - x : yabai -m space --destroy && yabai -m window --focus last
+# focus next space or rotate back to first space (current display)
+hyper - f : set info (yabai -m query --spaces --display)																			\
+	&& set last (echo $info | jq '.[-1]."has-focus"')																				\
+	&& if [ $last = "false" ]; yabai -m space --focus next; else; yabai -m space --focus (echo $info | jq '.[0].index'); end
 # focus previous space or rotate forward to last space
-hyper - h : yabai -m space --focus prev || yabai -m space --focus last
+hyper - a : set info (yabai -m query --spaces --display)																			\
+	&& set first (echo $info | jq '.[0]."has-focus"')																				\
+	&& if [ $first = "false" ]; yabai -m space --focus prev; else; yabai -m space --focus (echo $info | jq '.[-1].index'); end
+# swap with next space of current display or swap with first space
+hyper - v : set info (yabai -m query --spaces --display)																			\
+	&& set last (echo $info | jq '.[-1]."has-focus"')																				\
+	&& if [ $last = "false" ]; yabai -m space --swap next; else; yabai -m space --swap (echo $info | jq '.[0].index'); end
+# swap with previous space of current display or swap with last space ({)
+hyper - z : set info (yabai -m query --spaces --display)																			\
+	&& set first (echo $info | jq '.[0]."has-focus"')																				\
+	&& if [ $first = "false" ]; yabai -m space --swap prev; else; yabai -m space --swap (echo $info | jq '.[-1].index'); end
 # move space to next display by arrangement index
-hyper - o : yabai -m space --move next || yabai -m space --move first
+hyper - o : yabai -m space --move next || yabai -m space --move first  # TODO
 # move space to previous display by arrangement index
-hyper - y : yabai -m space --move prev || yabai -m space --move last
-# swap with next space by arrangement index (})
-hyper - 0x1D : yabai -m space --swap next || yabai -m space --swap first
-# swap with previous space by arrangement index ({)
-hyper - 0x1A : yabai -m space --swap prev || yabai -m space --swap last
-# create space for current display ([)
-hyper - 0x1C : yabai -m space --create && yabai -m space --focus last
-# destroy current space and focus first space on current display (])
-hyper - 0x19 : yabai -m space --destroy && yabai -m window --focus last
-# balance windows vertically and horizontally
-hyper - k : yabai -m space --balance
-# flip window tree horizontally
-hyper - i : yabai -m space --mirror x-axis
-# flip window tree vertically
-hyper - u : yabai -m space --mirror y-axis
+hyper - y : yabai -m space --move prev || yabai -m space --move last   # TODO
+# focus next stack level
+hyper - s : yabai -m window --focus stack.next
+# focus previous stack level
+hyper - d : yabai -m window --focus stack.prev
 # rotate window tree clockwise
-hyper - j : yabai -m space --rotate 90
+hyper - r : yabai -m space --rotate 90
 
 # --- windows --- #
+# stack window with sibling
+hyper - i : yabai -m window --stack sibling && yabai -m window --focus stack.first
+# toggle float twice to remove window from stack
+hyper - u : yabai -m window --toggle float && yabai -m window --toggle float
 # focus next window to the right
-hyper - f : yabai -m window --focus east
+hyper - l : yabai -m window --focus east
 # focus next window to the left
-hyper - a : yabai -m window --focus west
+hyper - h : yabai -m window --focus west
 # focus next window upwards
-hyper - d : yabai -m window --focus north
+hyper - k : yabai -m window --focus north
 # focus next window downwards
-hyper - s : yabai -m window --focus south
-# swap with next window to the right
-hyper - r : yabai -m window --swap east
+hyper - j : yabai -m window --focus south
+# swap with next window to the right (])
+hyper - 0x19 : yabai -m window --swap east
 # swap with next window to the left
-hyper - q : yabai -m window --swap west
-# swap with next window upwards
-hyper - e : yabai -m window --swap north
+hyper - n : yabai -m window --swap west
+# swap with next window upwards ([)
+hyper - 0x1C : yabai -m window --swap north
 # swap with next window downwards
-hyper - w : yabai -m window --swap south
+hyper - m : yabai -m window --swap south
 # move to next space by arrangement index
-hyper - v : begin; yabai -m window --space next || yabai -m window --space first; end			\
-	&& begin; yabai -m space --focus next || yabai -m space --focus first; end					\
+hyper - o : set info (yabai -m query --spaces --display)																			\
+	&& set last (echo $info | jq '.[-1]."has-focus"')																				\
+	&& if [ $last = "false" ]; yabai -m window --space next; else; yabai -m window --space (echo $info | jq '.[0].index'); end		\
+	&& if [ $last = "false" ]; yabai -m space --focus next; else; yabai -m space --focus (echo $info | jq '.[0].index'); end		\
 	&& yabai -m window --focus last
 # move to previous space by arrangement index
-hyper - z : begin; yabai -m window --space prev || yabai -m window --space last; end			\
-	&& begin; yabai -m space --focus prev || yabai -m space --focus last; end					\
+hyper - y : set info (yabai -m query --spaces --display)																			\
+	&& set first (echo $info | jq '.[0]."has-focus"')																				\
+	&& if [ $first = "false" ]; yabai -m window --space prev; else; yabai -m window --space (echo $info | jq '.[-1].index'); end	\
+	&& if [ $first = "false" ]; yabai -m space --focus prev; else; yabai -m space --focus (echo $info | jq '.[-1].index'); end		\
 	&& yabai -m window --focus last
-# close current window
-hyper - x: yabai -m window --close
+# move to previous display ({)
+hyper - 0x1A : set displays (yabai -m query --displays | jq 'sort_by(.frame.x)')																										\
+	&& set current (echo $displays | jq 'to_entries[] | select(.value."has-focus" == true) | .key')																					\
+	&& if [ $current -lt 1 ]; yabai -m window --display (echo $displays | jq '.[-1].index'); else; yabai -m window --display (echo $displays | jq ".[$current - 1].index"); end		\
+	&& if [ $current -lt 1 ]; yabai -m display --focus (echo $displays | jq '.[-1].index'); else; yabai -m display --focus (echo $displays | jq ".[$current - 1].index"); end
+# move to next display (})
+hyper - 0x1D : set displays (yabai -m query --displays | jq 'sort_by(.frame.x)')																												\
+	&& set current (echo $displays | jq 'to_entries[] | select(.value."has-focus" == true) | .key')																							\
+	&& set last (echo $displays | jq 'length - 2')																																			\
+	&& if [ $current -gt $last ]; yabai -m window --display (echo $displays | jq '.[0].index'); else; yabai -m window --display (echo $displays | jq ".[$current + 1].index"); end			\
+	&& if [ $current -gt $last ]; yabai -m display --focus (echo $displays | jq '.[0].index'); else; yabai -m display --focus (echo $displays | jq ".[$current + 1].index"); end
+# toggle sticky picture in picture
+hyper - p : yabai -m window --toggle sticky --toggle pip
 # zoom current window to fullscreen
 hyper - g : yabai -m window --toggle zoom-fullscreen
 # toggle current window float
 hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-# toggle sticky picture in picture
-hyper - p : yabai -m window --toggle sticky --toggle pip
+# raise window in stack
+hyper - b : yabai -m window --minimize
 
