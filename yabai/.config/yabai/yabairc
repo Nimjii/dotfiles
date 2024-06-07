@@ -17,7 +17,7 @@ yabai -m config										\
 	window_shadow				float				\
 	window_opacity				on					\
 	active_window_opacity		1.0					\
-	normal_window_opacity		0.9					\
+	normal_window_opacity		1.0					\
 	external_bar				all:55:0
 
 yabai -m rule --add app="^System Settings$" manage=off
