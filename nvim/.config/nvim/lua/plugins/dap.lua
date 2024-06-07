@@ -63,6 +63,13 @@ return {
               },
             }),
             vim.tbl_deep_extend('force', defaults, {
+              name = "VCC",
+              hostname = "www-viennacitycard-at.ddev.site",
+              pathMappings = {
+                ["/var/www/html"] = "/Users/l.spreitzer/projects/work/www-viennacitycard-at",
+              },
+            }),
+            vim.tbl_deep_extend('force', defaults, {
               name = "VPG",
               hostname = "www-viennapass-de.ddev.site",
               pathMappings = {
