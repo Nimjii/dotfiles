@@ -28,6 +28,7 @@ yabai -m rule --add app="^Deezer$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Spark$" manage=off
 yabai -m rule --add app="^Wally$" manage=off
+yabai -m rule --add app="^TablePlus$" manage=off
 
 # Notify sketchybar when spaces change
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
