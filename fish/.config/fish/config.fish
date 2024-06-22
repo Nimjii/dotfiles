@@ -4,6 +4,7 @@ set -gx PATH /Library/Frameworks/Python.framework/Versions/2.7/bin $PATH
 set -gx PATH ~/Library/Python/3.11/bin $PATH
 set -gx PATH $PATH ~/Library/Application\ Support/JetBrains/Toolbox/scripts
 set -gx PATH $PATH ~/.cargo/bin
+set -gx PATH $PATH ~/.local/share/bob/nvim-bin
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx NVM_DIR ~/.nvm
 set -gx SSH_AUTH_SOCK ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
