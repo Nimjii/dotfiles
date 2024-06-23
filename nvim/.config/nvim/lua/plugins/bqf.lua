@@ -4,13 +4,14 @@ return {
   'kevinhwang91/nvim-bqf',
   event = 'VimEnter',
   dependencies = {
+    'nvim-treesitter/nvim-treesitter',
+
     {
       'junegunn/fzf',
       build = function ()
         vim.fn['fzf#install']()
       end
     },
-    'nvim-treesitter/nvim-treesitter',
   },
   keys = {
     { '<leader>b', mode = 'n', '<cmd>copen<cr>', desc = 'Open quickfix' },

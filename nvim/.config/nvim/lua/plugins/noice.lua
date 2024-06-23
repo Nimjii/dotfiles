@@ -54,7 +54,7 @@ return {
           filter_options = {},
           position = {
             col = '50%',
-            row = '40%',
+            row = '70%',
           },
         },
         popup = {

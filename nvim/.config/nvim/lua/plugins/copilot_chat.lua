@@ -1,37 +1,42 @@
--- copilot.lua
+-- copilot_chat.lua
 
 return {
-  'jellydn/CopilotChat.nvim',
+  'CopilotC-Nvim/CopilotChat.nvim',
   branch = 'canary',
   dependencies = {
     'zbirenbaum/copilot.lua',
+    'nvim-lua/plenary.nvim',
   },
-  event = 'VeryLazy',
-  build = function ()
-    vim.defer_fn(function ()
-      vim.cmd('UpdateRemotePlugins');
-      vim.notify('CopilotChat - Update remote plugins. Please restart Neovim.');
-    end, 3000)
-  end,
-  opts = {
-    mode = 'split',
-    debug = false,
-    prompts = {
-      Explain = 'Explain how it works.',
-      Review = 'Review the following code and provide concise suggestions.',
-      Tests = 'Briefly explain how the selected code works, then generate unit tests.',
-      Refactor = 'Refactor the code to improve clarity and readability.',
-      Summarize = 'Please summarize the following text.',
+  config = true,
+  keys = {
+    { '<leader>ce', mode = 'n', '<cmd>CopilotChatOpen<cr>', desc = 'Open CopilotChat in vertical split' },
+    { '<leader>cf',
+      mode = 'n',
+      function()
+        require('CopilotChat').open({
+          window = {
+            layout = 'float',
+            title = 'CopilotChat',
+            border = 'single',
+            width = 160,
+            height = 40,
+          },
+        })
+      end,
+      desc = 'Open CopilotChat in floating window',
+    },
+    { '<leader>cq', mode = 'n', '<cmd>CopilotChatClose<cr>', desc = 'Close CopilotChat' },
+    { '<leader>cs', mode = 'n', '<cmd>CopilotChatStop<cr>', desc = 'Stop current CopilotChat output' },
+    { '<leader>cr', mode = 'n', '<cmd>CopilotChatReset<cr>', desc = 'Reset current CopilotChat window' },
+    {
+      '<leader>ca',
+      mode = { 'v', 'x' },
+      function()
+        local actions = require 'CopilotChat.actions'
+
+        actions.pick(actions.prompt_actions({ selection = require('CopilotChat.select').visual }))
+      end,
+      desc = 'Pick from CopilotChat prompts',
     },
   },
-  keys = {
-    { '<leader>cc', mode = 'n', '<cmd>CopilotChatInPlace<cr>', desc = 'Open chat window' },
-    { '<leader>cc', mode = 'x', ':CopilotChatInPlace', desc = 'Open chat window' },
-    { '<leader>ce', mode = 'n', '<cmd>CopilotChatExplain<cr>', desc = 'Explain code' },
-    { '<leader>cg', mode = 'n', '<cmd>CopilotChatTests<cr>', desc = 'Generate tests' },
-    { '<leader>cr', mode = 'n', '<cmd>CopilotChatReview<cr>', desc = 'Review code' },
-    { '<leader>cR', mode = 'n', '<cmd>CopilotChatRefactor<cr>', desc = 'Refactor code' },
-    { '<leader>cs', mode = 'n', '<cmd>CopilotChatSummarize<cr>', desc = 'Summarize text' },
-  },
 }
-

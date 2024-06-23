@@ -17,3 +17,4 @@ return {
     { '<leader>Fx', mode = 'x', function () require('genghis').moveSelectionToNewFile() end, desc = 'Move selection to new file' },
   },
 }
+

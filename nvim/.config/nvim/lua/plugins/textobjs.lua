@@ -1,8 +1,7 @@
 -- textobjs.lua
 
 return {
-  "chrisgrieser/nvim-various-textobjs",
-  event = "VeryLazy",
+  'chrisgrieser/nvim-various-textobjs',
   opts = {
     useDefaultKeymaps = false,
   },
@@ -33,4 +32,3 @@ return {
     { 'aD', mode = { 'o', 'x' }, function () require('various-textobjs').doubleSquareBrackets('outer') end, desc = 'outer double square brackets' },
   },
 }
-

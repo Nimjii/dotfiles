@@ -3,3 +3,4 @@
 _G.mynvim = {}
 
 mynvim.user_terminals = {}
+

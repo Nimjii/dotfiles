@@ -1,11 +1,25 @@
 -- treesitter.lua
 
 return {
-  -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
     'windwp/nvim-ts-autotag',
+
+    {
+      'nvim-treesitter/nvim-treesitter-context',
+      opts = {
+        enable = true,
+        max_lines = 6,
+        min_window_height = 0,
+        line_numbers = true,
+        multiline_threshold = 20,
+        trim_scope = 'outer',
+        mode = 'cursor',
+        separator = nil,
+        zindex = 20,
+      },
+    }
   },
   build = ':TSUpdate',
   config = function ()
@@ -43,7 +57,7 @@ return {
       textobjects = {
         select = {
           enable = true,
-          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+          lookahead = true,
           keymaps = {
             ['aa'] = '@parameter.outer',
             ['ia'] = '@parameter.inner',
@@ -74,7 +88,7 @@ return {
         },
         move = {
           enable = true,
-          set_jumps = true, -- whether to set jumps in the jumplist
+          set_jumps = true,
           goto_next_start = {
             [']m'] = '@function.outer',
             [']]'] = '@class.outer',
@@ -130,6 +144,7 @@ return {
         'toml',
         'tsx',
         'vim',
+        'vimdoc',
         'vue',
         'xml',
         'yaml',

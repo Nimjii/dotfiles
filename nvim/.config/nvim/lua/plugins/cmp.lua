@@ -3,13 +3,31 @@
 return {
   -- Autocompletion
   'hrsh7th/nvim-cmp',
+  event = 'VeryLazy',
   dependencies = {
-    -- Snippet Engine & its associated nvim-cmp source
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
-
-    -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
+    'windwp/nvim-autopairs',
+
+    {
+      'js-everts/cmp-tailwind-colors',
+      opts = {
+        enable_alpha = true,
+        format = function(itemColor)
+          return {
+            fg = itemColor,
+            bg = nil,
+            text = 'Color',
+          }
+        end,
+      },
+    },
+
     {
       'onsails/lspkind.nvim',
       config = function ()
@@ -25,26 +43,11 @@ return {
       end
     },
 
-    -- Adds a number of user-friendly snippets
-    'rafamadriz/friendly-snippets',
-
-    'hrsh7th/cmp-nvim-lsp-signature-help',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-cmdline',
-    'ray-x/cmp-treesitter',
-
     {
-      'js-everts/cmp-tailwind-colors',
+      'windwp/nvim-autopairs',
+      event = "InsertEnter",
       opts = {
-        enable_alpha = true,
-        format = function(itemColor)
-          return {
-            fg = itemColor,
-            bg = nil,
-            text = 'Color',
-          }
-        end,
+        enable_check_bracket_line = false,
       },
     },
   },
@@ -79,7 +82,7 @@ return {
     cmp.setup({
       enabled = function ()
         local buf = vim.api.nvim_get_current_buf()
-        local buf_filetype = vim.api.nvim_buf_get_option(buf, 'filetype')
+        local buf_filetype = vim.api.nvim_get_option_value('filetype', { buf = buf })
         local filetype_denylist = { 'neo-tree', 'neo-tree-popup', 'TelescopePrompt' }
 
         if require('utils').is_large_file(buf) or vim.tbl_contains(filetype_denylist, buf_filetype) then
@@ -155,7 +158,6 @@ return {
             trailing_slash = true,
           },
         },
-        { name = 'treesitter', priority = 500 },
       },
     })
 
@@ -182,6 +184,8 @@ return {
       )
     })
 
+    cmp.event:on('confirm_done', require('nvim-autopairs.completion.cmp').on_confirm_done())
+
     cmp.event:on('menu_opened', function ()
       vim.b.copilot_suggestion_hidden = true
     end)
@@ -189,6 +193,10 @@ return {
     cmp.event:on('menu_closed', function ()
       vim.b.copilot_suggestion_hidden = false
     end)
-  end
+  end,
+  keys = {
+    { '<Tab>', mode = { 'n' }, function () require('luasnip').jump(1) end, silent = true, },
+    { '<S-Tab>', mode = { 'n' }, function () require('luasnip').jump(-1) end, silent = true, },
+  },
 }
 

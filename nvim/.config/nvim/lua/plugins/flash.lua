@@ -16,7 +16,7 @@ return {
       char = {
         autohide = false,
         jump_labels = false,
-        multi_line = false,
+        multi_line = true,
       },
     },
     search = {

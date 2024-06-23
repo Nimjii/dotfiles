@@ -3,11 +3,12 @@
 return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
+  event = 'VeryLazy',
   dependencies = {
-    'axkirillov/hbac.nvim',
     'folke/noice.nvim',
     'gbprod/yanky.nvim',
     'nvim-lua/plenary.nvim',
+
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',
@@ -74,7 +75,6 @@ return {
     })
 
     pcall(require('telescope').load_extension, 'fzf')
-    pcall(require('telescope').load_extension, 'hbac')
     pcall(require('telescope').load_extension, 'noice')
     pcall(require('telescope').load_extension, 'yank_history')
 

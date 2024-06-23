@@ -95,12 +95,16 @@ function M.location_handler(prompt_title)
     local res = get_correct_result(result, context)
     local client = vim.lsp.get_client_by_id(context.client_id)
 
+    if client == nil then
+      return
+    end
+
     if not res or vim.tbl_isempty(res) then
       print('No references found')
       return
     end
 
-    if not vim.tbl_islist(res) then
+    if not vim.islist(res) then
       jump_to_location(res, client.offset_encoding)
       return
     end
@@ -351,36 +355,6 @@ function M.dir_picker(opts, fn, live_grep)
       else
         fn(opts)
       end
-    end)
-    return true
-  end)
-end
-
-function M.oil_picker(opts)
-  local find_command = get_dir_find_command(opts)
-
-  start_dir_picker(find_command, opts, function (prompt_bufnr)
-    actions.close:replace(function ()
-      close(prompt_bufnr)
-
-      vim.schedule(function ()
-        vim.cmd('Oil')
-      end)
-    end)
-
-    action_set.select:replace(function ()
-      local current_picker = action_state.get_current_picker(prompt_bufnr)
-      local selections = current_picker:get_multi_selection()
-
-      if vim.tbl_isempty(selections) then
-        if action_state.get_selected_entry().value ~= '' then
-          vim.schedule(function ()
-            vim.cmd('Oil ' .. action_state.get_selected_entry().value)
-          end)
-        end
-      end
-
-      close(prompt_bufnr)
     end)
     return true
   end)

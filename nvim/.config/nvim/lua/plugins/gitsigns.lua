@@ -4,6 +4,7 @@ return {
   'lewis6991/gitsigns.nvim',
   event = 'BufEnter',
   opts = {
+    max_file_length = 10000,
     signs = {
       add = { text = '+' },
       change = { text = '~' },

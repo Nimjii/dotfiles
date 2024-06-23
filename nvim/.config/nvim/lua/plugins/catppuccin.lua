@@ -24,7 +24,7 @@ return {
         noice = true,
         nvimtree = false,
         rainbow_delimiters = false,
-        treesitter_context = false,
+        treesitter_context = true,
       },
       styles = {
         conditionals = {},
@@ -34,3 +34,4 @@ return {
     vim.cmd.colorscheme 'catppuccin'
   end,
 }
+

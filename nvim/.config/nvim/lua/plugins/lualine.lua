@@ -2,7 +2,7 @@
 
 local function get_lsps()
   local output = ''
-  local clients = vim.lsp.get_active_clients({
+  local clients = vim.lsp.get_clients({
     bufnr = vim.api.nvim_get_current_buf(),
   })
 
@@ -32,9 +32,7 @@ local function pin_status()
 end
 
 return {
-  -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
-  -- See `:help lualine.txt`
   dependencies = {
     'declancm/maximize.nvim',
     'f-person/git-blame.nvim',
