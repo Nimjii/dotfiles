@@ -4,7 +4,15 @@ return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
-    'windwp/nvim-ts-autotag',
+
+    {
+      'windwp/nvim-ts-autotag',
+      opts = {
+        enable_close = true,
+        enable_rename = true,
+        enable_close_on_slash = true,
+      },
+    },
 
     {
       'nvim-treesitter/nvim-treesitter-context',
@@ -30,9 +38,6 @@ return {
       sync_install = true,
       ignore_install = {},
       modules = {},
-      autotag = {
-        enable = true
-      },
       highlight = {
         enable = true,
         disable = function (_, buf)
