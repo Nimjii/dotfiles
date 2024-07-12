@@ -5,7 +5,7 @@ return {
   cmd = 'Copilot',
   event = 'InsertEnter',
   opts = {
-    copilot_node_command = vim.fn.expand('$HOME') .. '/.local/share/nvm/v20.6.0/bin/node',
+    copilot_node_command = vim.fn.expand('$HOME') .. '/.local/share/nvm/v20.15.0/bin/node',
     filetypes = {
       [''] = false,
     },
