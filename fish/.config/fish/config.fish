@@ -1,6 +1,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 set -gx PATH /Library/Frameworks/Python.framework/Versions/2.7/bin $PATH
+set -gx PATH /opt/homebrew/opt/node@14/bin $PATH
 set -gx PATH ~/Library/Python/3.11/bin $PATH
 set -gx PATH $PATH ~/Library/Application\ Support/JetBrains/Toolbox/scripts
 set -gx PATH $PATH ~/.cargo/bin
