@@ -19,6 +19,9 @@ return {
           enabled = true,
           colored_indent_levels = true,
         },
+        mini = {
+          enabled = false,
+        },
         neogit = false,
         neotree = true,
         noice = true,
