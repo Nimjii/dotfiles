@@ -36,10 +36,10 @@ hyper - v : set info (yabai -m query --spaces --display)																			\
 hyper - z : set info (yabai -m query --spaces --display)																			\
 	&& set first (echo $info | jq '.[0]."has-focus"')																				\
 	&& if [ $first = "false" ]; yabai -m space --swap prev; else; yabai -m space --swap (echo $info | jq '.[-1].index'); end
-# move space to next display by arrangement index
-hyper - o : yabai -m space --move next || yabai -m space --move first  # TODO
-# move space to previous display by arrangement index
-hyper - y : yabai -m space --move prev || yabai -m space --move last   # TODO
+## move space to next display by arrangement index
+#hyper - o : yabai -m space --move next || yabai -m space --move first  # TODO
+## move space to previous display by arrangement index
+#hyper - y : yabai -m space --move prev || yabai -m space --move last   # TODO
 # focus next stack level
 hyper - s : yabai -m window --focus stack.next
 # focus previous stack level
@@ -68,13 +68,13 @@ hyper - n : yabai -m window --swap west
 hyper - 0x1C : yabai -m window --swap north
 # swap with next window downwards
 hyper - m : yabai -m window --swap south
-# move to next space by arrangement index
+# move to next space
 hyper - o : set info (yabai -m query --spaces --display)																			\
 	&& set last (echo $info | jq '.[-1]."has-focus"')																				\
 	&& if [ $last = "false" ]; yabai -m window --space next; else; yabai -m window --space (echo $info | jq '.[0].index'); end		\
 	&& if [ $last = "false" ]; yabai -m space --focus next; else; yabai -m space --focus (echo $info | jq '.[0].index'); end		\
 	&& yabai -m window --focus last
-# move to previous space by arrangement index
+# move to previous space
 hyper - y : set info (yabai -m query --spaces --display)																			\
 	&& set first (echo $info | jq '.[0]."has-focus"')																				\
 	&& if [ $first = "false" ]; yabai -m window --space prev; else; yabai -m window --space (echo $info | jq '.[-1].index'); end	\
@@ -97,6 +97,6 @@ hyper - p : yabai -m window --toggle sticky --toggle pip
 hyper - g : yabai -m window --toggle zoom-fullscreen
 # toggle current window float
 hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-# raise window in stack
+# toggle window minimization
 hyper - b : yabai -m window --minimize
 
