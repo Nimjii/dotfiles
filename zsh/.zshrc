@@ -11,6 +11,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ENABLE_CORRECTION="true"
 
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
 plugins=(copyfile git z zsh-autosuggestions zsh-nvm zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
@@ -23,11 +25,11 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
 
 # Extend path
-path+=("/Library/Frameworks/Python.framework/Versions/2.7/bin")
-path+=("/opt/homebrew/opt/node@14/bin")
-path+=("~/Library/Python/3.11/bin")
-path+=("~/.cargo/bin")
-path+=("~/.local/share/bob/nvim-bin")
+path=("/Library/Frameworks/Python.framework/Versions/2.7/bin" $path)
+path=("/opt/homebrew/opt/node@14/bin" $path)
+path=("/Users/l.spreitzer/Library/Python/3.11/bin" $path)
+path=("/Users/l.spreitzer/.cargo/bin" $path)
+path=("/Users/l.spreitzer/.local/share/bob/nvim-bin" $path)
 
 export PATH
 
