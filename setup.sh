@@ -40,7 +40,7 @@ create_link "zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 
 # install zsh theme
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -135,12 +135,6 @@ brew services start sketchybar
 
 # start skhd
 skhd --start-service
-
-# install fisher
-# curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
-# 	&& fisher install jorgebucaran/fisher
-# 	&& fisher install jorgebucaran/nvm.fish
-# 	&& nvm install lts
 
 # install lazy and update everything
 nvim --headless "+Lazy! sync" +qa
