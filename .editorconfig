@@ -20,6 +20,10 @@ trim_trailing_whitespace = false
 [*.rst]
 indent_size = 3
 
+# Lua-Files
+[*.lua]
+indent_size = 2
+
 # YAML-Files
 [{*.yaml,*.yml}]
 indent_size = 2
