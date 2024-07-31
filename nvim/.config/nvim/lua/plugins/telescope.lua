@@ -112,7 +112,7 @@ return {
     { '<leader>fp', mode = 'n', function () require('telescope').extensions.hbac.buffers() end, desc = 'HBAC Buffers' },
     { '<leader>fy', mode = 'n', function () require('telescope').extensions.yank_history.yank_history() end, desc = 'Yank history' },
     { '<leader>f<CR>', mode = 'n', function () require('telescope.builtin').resume() end, desc = 'Resume last search' },
-    { '<leader><space>', mode = 'n', function () require('utils.telescope').buffers() end, desc = 'Find existing buffers' },
+    { '<leader>f<space>', mode = 'n', function () require('utils.telescope').buffers() end, desc = 'Find existing buffers' },
     {
       '<leader>ff',
       mode = 'n',
