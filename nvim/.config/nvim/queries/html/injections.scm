@@ -7,7 +7,7 @@
       (attribute_value) @injection.content
     )
   )
-  (#match? @attribute_name "^(x-init|x-show|x-bind|x-text|x-html|x-model|x-modelable|x-for|x-effect|x-if|x-id|(x-on|\\@|:).*)$")
+  (#match? @attribute_name "^(x-init|x-show|x-bind|x-text|x-html|x-model|x-modelable|x-for|x-effect|x-if|x-id|x-trap|(x-on|\\@|:).*)$")
   (#set! injection.language "javascript")
 )
 
