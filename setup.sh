@@ -75,7 +75,6 @@ install "ranger"
 install "ripgrep"
 install "rubberband"
 install "rust"
-install "sketchybar"
 install "skhd"
 install "t3ll"
 install "tmux"
@@ -121,7 +120,6 @@ create_link "git"
 create_link "karabiner"
 create_link "lazygit"
 create_link "nvim"
-create_link "sketchybar"
 create_link "ssh"
 create_link "tmux"
 create_link "wezterm"
@@ -129,9 +127,6 @@ create_link "yabai"
 
 # move font files to font directory
 cp fonts/Library/Fonts/* ~/Library/Fonts/
-
-# start sketchybar
-brew services start sketchybar
 
 # start skhd
 skhd --start-service
