@@ -89,6 +89,7 @@ brew install --cask "font-overpass-nerd-font"
 brew install --cask "google-chrome"
 brew install --cask "karabiner-elements"
 brew install --cask "keka"
+brew install --cask "nikitabobko/tap/aerospace"
 brew install --cask "postman"
 brew install --cask "raycast"
 brew install --cask "sf-symbols"
@@ -114,6 +115,7 @@ nvm install 20.15.0
 
 # symlink all config files
 create_link "1Password"
+create_link "aerospace"
 create_link "bat"
 create_link "git"
 create_link "karabiner"

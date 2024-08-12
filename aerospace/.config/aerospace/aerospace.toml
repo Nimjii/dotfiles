@@ -1,0 +1,159 @@
+after-login-command = []
+after-startup-command = []
+
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 20
+
+default-root-container-layout = 'accordion'
+default-root-container-orientation = 'auto'
+
+key-mapping.preset = 'qwerty'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = ['move-mouse window-lazy-center']
+
+[gaps]
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       8
+outer.bottom =     8
+outer.top =        8
+outer.right =      8
+
+[workspace-to-monitor-force-assignment]
+B = 'secondary'
+C = 'secondary'
+D = 'main'
+E = 'main'
+K = 'secondary'
+M = 'secondary'
+P = 'main'
+T = 'main'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace C'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyapp.TablePlus'
+run = 'move-node-to-workspace D'
+
+[[on-window-detected]]
+if.app-id = 'com.sublimetext.4'
+run = 'move-node-to-workspace E'
+
+[[on-window-detected]]
+if.app-id = 'io.zsa.keymapp'
+run = 'move-node-to-workspace K'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
+if.app-id = 'com.googlecode.iterm2'
+run = 'move-node-to-workspace T'
+
+[mode.main.binding]
+cmd-ctrl-alt-shift-i = 'layout accordion tiles'
+cmd-ctrl-alt-shift-o = 'layout horizontal vertical'
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+cmd-ctrl-alt-shift-h = 'focus-monitor --wrap-around left'
+cmd-ctrl-alt-shift-l = 'focus-monitor --wrap-around right'
+
+cmd-ctrl-alt-shift-f = 'fullscreen'
+
+cmd-ctrl-alt-shift-q = 'close-all-windows-but-current'
+
+alt-a = 'workspace A'
+alt-b = 'workspace B'
+alt-c = 'workspace C'
+alt-d = 'workspace D'
+alt-e = 'workspace E'
+alt-f = 'workspace F'
+alt-g = 'workspace G'
+alt-i = 'workspace I'
+alt-m = 'workspace M'
+alt-n = 'workspace N'
+alt-o = 'workspace O'
+alt-p = 'workspace P'
+alt-q = 'workspace Q'
+alt-r = 'workspace R'
+alt-s = 'workspace S'
+alt-t = 'workspace T'
+alt-u = 'workspace U'
+alt-v = 'workspace V'
+alt-w = 'workspace W'
+alt-x = 'workspace X'
+alt-y = 'workspace Y'
+alt-z = 'workspace Z'
+
+alt-shift-a = 'move-node-to-workspace A'
+alt-shift-b = 'move-node-to-workspace B'
+alt-shift-c = 'move-node-to-workspace C'
+alt-shift-d = 'move-node-to-workspace D'
+alt-shift-e = 'move-node-to-workspace E'
+alt-shift-f = 'move-node-to-workspace F'
+alt-shift-g = 'move-node-to-workspace G'
+alt-shift-i = 'move-node-to-workspace I'
+alt-shift-m = 'move-node-to-workspace M'
+alt-shift-n = 'move-node-to-workspace N'
+alt-shift-o = 'move-node-to-workspace O'
+alt-shift-p = 'move-node-to-workspace P'
+alt-shift-q = 'move-node-to-workspace Q'
+alt-shift-r = 'move-node-to-workspace R'
+alt-shift-s = 'move-node-to-workspace S'
+alt-shift-t = 'move-node-to-workspace T'
+alt-shift-u = 'move-node-to-workspace U'
+alt-shift-v = 'move-node-to-workspace V'
+alt-shift-w = 'move-node-to-workspace W'
+alt-shift-x = 'move-node-to-workspace X'
+alt-shift-y = 'move-node-to-workspace Y'
+alt-shift-z = 'move-node-to-workspace Z'
+
+alt-tab = 'workspace-back-and-forth'
+
+ctrl-alt-shift-m = 'mode movement'
+ctrl-alt-shift-r = 'mode resize'
+
+[mode.movement.binding]
+alt-h = 'move left'
+alt-j = 'move down'
+alt-k = 'move up'
+alt-l = 'move right'
+
+alt-shift-h = ['move-node-to-monitor --wrap-around left', 'focus-monitor --wrap-around left']
+alt-shift-l = ['move-node-to-monitor --wrap-around right', 'focus-monitor --wrap-around right']
+
+cmd-ctrl-alt-shift-h = ['move-workspace-to-monitor --wrap-around prev', 'focus-monitor --wrap-around left']
+cmd-ctrl-alt-shift-l = ['move-workspace-to-monitor --wrap-around next', 'focus-monitor --wrap-around right']
+
+esc = 'mode main'
+
+[mode.resize.binding]
+alt-j = 'resize smart -50'
+alt-k = 'resize smart +50'
+
+esc = 'mode main'
+
