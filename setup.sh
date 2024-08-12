@@ -75,12 +75,10 @@ install "ranger"
 install "ripgrep"
 install "rubberband"
 install "rust"
-install "skhd"
 install "t3ll"
 install "tmux"
 install "tree-sitter"
 install "volta"
-install "yabai"
 install "yarn"
 
 # install casks
@@ -124,13 +122,9 @@ create_link "nvim"
 create_link "ssh"
 create_link "tmux"
 create_link "wezterm"
-create_link "yabai"
 
 # move font files to font directory
 cp fonts/Library/Fonts/* ~/Library/Fonts/
-
-# start skhd
-skhd --start-service
 
 # install lazy and update everything
 nvim --headless "+Lazy! sync" +qa
