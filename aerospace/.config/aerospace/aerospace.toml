@@ -25,14 +25,20 @@ outer.top =        8
 outer.right =      8
 
 [workspace-to-monitor-force-assignment]
+A = 'main'
 B = 'secondary'
 C = 'secondary'
 D = 'main'
 E = 'main'
 K = 'secondary'
-M = 'secondary'
+M = 'main'
 P = 'main'
+S = 'secondary'
 T = 'main'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
@@ -59,12 +65,16 @@ if.app-id = 'io.zsa.keymapp'
 run = 'move-node-to-workspace K'
 
 [[on-window-detected]]
-if.app-id = 'com.spotify.client'
+if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
 if.app-id = 'com.postmanlabs.mac'
 run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
@@ -98,7 +108,6 @@ alt-m = 'workspace M'
 alt-n = 'workspace N'
 alt-o = 'workspace O'
 alt-p = 'workspace P'
-alt-q = 'workspace Q'
 alt-r = 'workspace R'
 alt-s = 'workspace S'
 alt-t = 'workspace T'
@@ -121,7 +130,6 @@ alt-shift-m = 'move-node-to-workspace M'
 alt-shift-n = 'move-node-to-workspace N'
 alt-shift-o = 'move-node-to-workspace O'
 alt-shift-p = 'move-node-to-workspace P'
-alt-shift-q = 'move-node-to-workspace Q'
 alt-shift-r = 'move-node-to-workspace R'
 alt-shift-s = 'move-node-to-workspace S'
 alt-shift-t = 'move-node-to-workspace T'
