@@ -26,14 +26,14 @@ outer.right =      8
 
 [workspace-to-monitor-force-assignment]
 A = 'main'
-B = 'secondary'
-C = 'secondary'
+B = ['secondary', 3]
+C = ['secondary', 3]
 D = 'main'
 E = 'main'
-K = 'secondary'
+K = ['secondary', 3]
 M = 'main'
 P = 'main'
-S = 'secondary'
+S = ['secondary', 'built-in']
 T = 'main'
 
 [[on-window-detected]]
