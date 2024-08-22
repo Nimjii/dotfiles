@@ -83,6 +83,7 @@ install "yarn"
 
 # install casks
 brew install --cask "1password"
+brew install --cask "another-redis-desktop-manager"
 brew install --cask "docker"
 brew install --cask "firefox"
 brew install --cask "font-overpass-nerd-font"
