@@ -35,6 +35,7 @@ M = 'main'
 P = 'main'
 S = ['secondary', 'built-in']
 T = 'main'
+V = ['secondary', 'built-in']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
