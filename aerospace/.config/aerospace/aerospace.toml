@@ -70,7 +70,7 @@ if.app-id = 'io.zsa.keymapp'
 run = 'move-node-to-workspace K'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.mail'
+if.app-id = 'com.microsoft.Outlook'
 run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
