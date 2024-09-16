@@ -50,6 +50,10 @@ if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace C'
 
@@ -169,4 +173,3 @@ alt-j = 'resize smart -50'
 alt-k = 'resize smart +50'
 
 esc = 'mode main'
-
