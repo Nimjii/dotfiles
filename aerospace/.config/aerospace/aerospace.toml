@@ -31,6 +31,7 @@ C = ['secondary', 3]
 D = 'main'
 E = 'main'
 K = ['secondary', 3]
+L = 'main'
 M = 'main'
 P = 'main'
 S = ['secondary', 'built-in']
@@ -43,10 +44,6 @@ run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
@@ -72,6 +69,10 @@ run = 'move-node-to-workspace E'
 [[on-window-detected]]
 if.app-id = 'io.zsa.keymapp'
 run = 'move-node-to-workspace K'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace L'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
