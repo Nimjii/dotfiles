@@ -71,7 +71,7 @@ return {
 
     local servers = {
       html = {},
-      tsserver = {},
+      ts_ls = {},
 
       cssls = {
         filetypes = {
