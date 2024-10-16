@@ -16,7 +16,7 @@ return {
         alpha = false,
         dashboard = false,
         indent_blankline = {
-          enabled = true,
+          enabled = false,
           colored_indent_levels = true,
         },
         mini = {
@@ -37,4 +37,3 @@ return {
     vim.cmd.colorscheme 'catppuccin'
   end,
 }
-
