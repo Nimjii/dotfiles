@@ -66,8 +66,8 @@ return {
           keymaps = {
             ['aa'] = '@parameter.outer',
             ['ia'] = '@parameter.inner',
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
+            ['aF'] = '@function.outer',
+            ['iF'] = '@function.inner',
             ['ac'] = '@class.outer',
             ['ic'] = '@class.inner',
             ["ar"] = '@loop.outer',
@@ -162,4 +162,3 @@ return {
     })
   end,
 }
-
