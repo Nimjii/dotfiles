@@ -27,7 +27,7 @@ return {
         noice = true,
         nvimtree = false,
         rainbow_delimiters = false,
-        treesitter_context = true,
+        treesitter_context = false,
       },
       styles = {
         conditionals = {},
