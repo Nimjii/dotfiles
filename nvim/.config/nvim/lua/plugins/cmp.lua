@@ -12,7 +12,6 @@ return {
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-cmdline',
-    'windwp/nvim-autopairs',
 
     {
       'js-everts/cmp-tailwind-colors',
@@ -41,14 +40,6 @@ return {
 
         vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
       end
-    },
-
-    {
-      'windwp/nvim-autopairs',
-      event = "InsertEnter",
-      opts = {
-        enable_check_bracket_line = false,
-      },
     },
   },
   config = function ()
@@ -199,4 +190,3 @@ return {
     { '<S-Tab>', mode = { 'n' }, function () require('luasnip').jump(-1) end, silent = true, },
   },
 }
-
