@@ -15,6 +15,7 @@ vim.o.mouse = 'a'
 vim.o.pumblend = 1
 vim.o.scrolloff = 8
 vim.o.shiftwidth = 4
+vim.o.sidescrolloff = 8
 vim.o.smartcase = true
 vim.o.softtabstop = 4
 vim.o.tabstop = 4
@@ -37,4 +38,3 @@ vim.g.gitblame_ignored_filetypes = { "lock" }
 vim.g.gitblame_display_virtual_text = 0
 vim.g.gitblame_message_template = "<summary> • <date> • <author>"
 -- vim.g.mkdp_auto_close = 0
-
