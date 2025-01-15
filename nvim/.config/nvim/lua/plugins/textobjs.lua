@@ -3,7 +3,9 @@
 return {
   'chrisgrieser/nvim-various-textobjs',
   opts = {
-    useDefaultKeymaps = false,
+    keymaps = {
+      useDefaults = false,
+    },
   },
   keys = {
     { 'ii', mode = { 'o', 'x' }, function () require('various-textobjs').indentation('inner', 'inner') end, desc = 'inner-inner indentation' },
