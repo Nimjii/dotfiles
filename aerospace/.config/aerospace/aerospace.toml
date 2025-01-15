@@ -30,6 +30,7 @@ B = ['secondary', 3]
 C = ['secondary', 3]
 D = 'main'
 E = 'main'
+I = 'main'
 K = ['secondary', 3]
 L = 'main'
 M = 'main'
@@ -65,6 +66,10 @@ run = 'move-node-to-workspace D'
 [[on-window-detected]]
 if.app-id = 'com.sublimetext.4'
 run = 'move-node-to-workspace E'
+
+[[on-window-detected]]
+if.app-id = 'com.install4j.5557-0173-2810-0000.22'
+run = ['layout tiling', 'move-node-to-workspace I']
 
 [[on-window-detected]]
 if.app-id = 'io.zsa.keymapp'
