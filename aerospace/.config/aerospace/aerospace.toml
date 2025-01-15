@@ -68,6 +68,10 @@ if.app-id = 'com.sublimetext.4'
 run = 'move-node-to-workspace E'
 
 [[on-window-detected]]
+if.app-id = 'org.libreoffice.script'
+run = 'move-node-to-workspace E'
+
+[[on-window-detected]]
 if.app-id = 'com.install4j.5557-0173-2810-0000.22'
 run = ['layout tiling', 'move-node-to-workspace I']
 
