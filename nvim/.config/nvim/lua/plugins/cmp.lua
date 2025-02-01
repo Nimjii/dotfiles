@@ -29,17 +29,13 @@ return {
 
     {
       'onsails/lspkind.nvim',
-      config = function ()
-        require('lspkind').init({
-          symbol_map = {
-            Color = '󰌁',
-            Copilot = '',
-            String = '',
-          }
-        })
-
-        vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
-      end
+      opts = {
+        symbol_map = {
+          Color = '󰌁',
+          Copilot = '',
+          String = '',
+        }
+      },
     },
   },
   config = function ()

@@ -1,6 +1,7 @@
 -- Dependencies
 require 'autocmds'
 require 'filetypes'
+require 'highlight'
 require 'options'
 
 --[[ Install lazy ]]
@@ -27,4 +28,3 @@ require('lazy').setup({
 
 -- uses which-key so it has to be called after plugins have been installed
 require 'mappings'
-
