@@ -1,29 +1,28 @@
 [include]
-	path = ~/.config/themes.gitconfig
+    path = ~/.config/themes.gitconfig
 [includeIf "gitdir:~/projects/personal/"]
-	path = ~/projects/personal/.gitconfig
+    path = ~/projects/personal/.gitconfig
 [includeIf "gitdir:~/projects/work/"]
-	path = ~/projects/work/.gitconfig
+    path = ~/projects/work/.gitconfig
 [includeIf "gitdir:~/projects/work/github/"]
-	path = ~/projects/work/github/.gitconfig
+    path = ~/projects/work/github/.gitconfig
 [core]
-	autocrlf = input
-	attributesfile = /Users/l.spreitzer/.gitattributes
+    autocrlf = input
+    attributesfile = /Users/l.spreitzer/.gitattributes
 [gpg]
-	format = ssh
+    format = ssh
 [gpg "ssh"]
-	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [pull]
-	rebase = true
+    rebase = true
 [delta]
-	features = chameleon
+    features = chameleon
 [diff "lockb"]
-	textconv = bun
-	binary = true
+    textconv = bun
+    binary = true
 [alias]
-	lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(Yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-	wdiff = "diff --word-diff"
-	mblame = "blame -w -C -C -C"
+    lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(Yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    wdiff = "diff --word-diff"
+    mblame = "blame -w -C -C -C"
 [rerere]
-	enabled = true
-
+    enabled = true
