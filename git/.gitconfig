@@ -24,5 +24,6 @@
     lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(Yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
     wdiff = "diff --word-diff"
     mblame = "blame -w -C -C -C"
+    clone-for-worktrees = "!sh $HOME/git-clone-for-worktrees.sh"
 [rerere]
     enabled = true
