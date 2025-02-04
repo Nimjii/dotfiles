@@ -3,7 +3,11 @@
 return {
   'folke/snacks.nvim',
   lazy = false,
+  priority = 1000,
   opts = {
+    explorer = {
+      replace_netrw = true,
+    },
     indent = {
       indent = {
         enabled = true,
@@ -19,6 +23,33 @@ return {
         },
       },
     },
+    picker = {
+      sources = {
+        explorer = {
+          auto_close = true,
+          exclude = {
+            '.DS_Store',
+          },
+          git_status_open = true,
+          hidden = true,
+          ignored = true,
+          layout = {
+            preset = 'default',
+            preview = true,
+            layout = {
+              width = 0.95,
+              height = 0.9,
+            },
+          },
+          win = {
+            list = {
+              keys = {
+                ['<c-c>'] = { 'close', mode = { 'n', 'i' } },
+              },
+            },
+          },
+        },
+      },
     scratch = {
       ft = function ()
         return 'markdown'
@@ -29,6 +60,7 @@ return {
     },
   },
   keys = {
+    { '<leader>e', mode = 'n', function () require('snacks.picker').explorer() end, desc = 'Toggle file tree' },
     { '<leader>ho', mode = 'n', function () require('snacks.gitbrowse').open({ what = 'commit' }) end, desc = 'Open commit url' },
     { '<leader>hf', mode = 'n', function () require('snacks.gitbrowse').open() end, desc = 'Open file url' },
     { '<leader>.', mode = 'n', function () require('snacks').scratch() end, desc = 'Open scratch buffer' },
