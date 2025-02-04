@@ -70,7 +70,7 @@ return {
       enabled = function ()
         local buf = vim.api.nvim_get_current_buf()
         local buf_filetype = vim.api.nvim_get_option_value('filetype', { buf = buf })
-        local filetype_denylist = { 'neo-tree', 'neo-tree-popup', 'TelescopePrompt' }
+        local filetype_denylist = { 'neo-tree', 'neo-tree-popup', 'snacks_picker_input', 'snacks_picker_list' }
 
         if require('utils').is_large_file(buf) or vim.tbl_contains(filetype_denylist, buf_filetype) then
           return false
@@ -170,8 +170,6 @@ return {
         }
       )
     })
-
-    cmp.event:on('confirm_done', require('nvim-autopairs.completion.cmp').on_confirm_done())
 
     cmp.event:on('menu_opened', function ()
       vim.b.copilot_suggestion_hidden = true
