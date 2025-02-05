@@ -80,6 +80,8 @@ return {
         row = -3,
         col = 0,
       },
+    words = {
+      enabled = true,
     },
   },
   keys = {
