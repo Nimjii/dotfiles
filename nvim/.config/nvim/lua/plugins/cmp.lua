@@ -45,7 +45,7 @@ return {
 
     local border_opts = {
       border = 'single',
-      winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+      winhighlight = 'CursorLine:Visual,Search:None',
     }
 
     local confirm_mapping = cmp.mapping {

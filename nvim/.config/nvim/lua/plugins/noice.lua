@@ -57,16 +57,7 @@ return {
             row = '70%',
           },
         },
-        popup = {
-          win_options = {
-            winhighlight = {
-              Normal = 'Normal',
-              FloatBorder = 'FloatBorder',
-            },
-          },
-        },
       },
     })
   end,
 }
-
