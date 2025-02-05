@@ -23,6 +23,7 @@ vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '{', '{zz', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '}', '}zz', { silent = true })
+vim.keymap.set({ 'n', 'v' }, 'G', 'Gzz', { silent = true })
 vim.keymap.set({ 'n' }, '*', '*zzzv', { silent = true })
 vim.keymap.set({ 'n' }, 'n', 'nzzzv', { silent = true })
 vim.keymap.set({ 'n' }, 'N', 'Nzzzv', { silent = true })
@@ -68,4 +69,3 @@ vim.keymap.set({ 'n' }, 'i', function ()
     return 'i'
   end
 end, { expr = true, desc = 'Enter insert mode' })
-

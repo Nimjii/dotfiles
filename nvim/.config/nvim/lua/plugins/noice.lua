@@ -14,9 +14,9 @@ return {
       end
     end, { silent = true, expr = true })
 
-    vim.keymap.set({"n", "i", "s"}, "<C-d>", function()
+    vim.keymap.set({"n", "i", "s"}, "<C-b>", function()
       if not require("noice.lsp").scroll(-4) then
-        return "<C-d>zz"
+        return "<C-b>zz"
       end
     end, { silent = true, expr = true })
 
