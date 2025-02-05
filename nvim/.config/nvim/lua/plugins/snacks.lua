@@ -10,7 +10,6 @@ return {
     },
     indent = {
       indent = {
-        enabled = true,
         char = '┊',
         hl = {
           'SnacksIndent1',
