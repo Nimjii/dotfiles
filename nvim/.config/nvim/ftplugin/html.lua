@@ -1,5 +1,5 @@
 -- Automatically close self-closing tag when pressing /
-vim.keymap.set('i', 'a', function()
+vim.keymap.set('i', '/', function()
   local node = vim.treesitter.get_node()
 
   if not node then
