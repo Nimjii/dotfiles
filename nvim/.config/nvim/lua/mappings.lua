@@ -11,7 +11,7 @@ require('which-key').register({
   H = { name = '󰤱 Pins' },
   p = { name = ' Portal' },
   Q = { name = ' Quickfix' },
-  t = { name = ' ToggleTerm' },
+  t = { name = ' Terminal' },
 }, { prefix = '<leader>' })
 
 -- Qol mappings

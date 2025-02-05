@@ -80,6 +80,17 @@ return {
         row = -3,
         col = 0,
       },
+      terminal = {
+        border = 'rounded',
+        position = 'float',
+        wo = {
+          winhighlight = 'FloatBorder:Normal',
+        },
+        keys = {
+          term_hide = { '<F7>', 'hide', mode = { 't', 'n' }, desc = 'Hide terminal' },
+        },
+      },
+    },
     words = {
       enabled = true,
     },
@@ -116,5 +127,10 @@ return {
     { '<leader>hf', mode = 'n', function () require('snacks.gitbrowse').open() end, desc = 'Open file url' },
     { '<leader>.', mode = 'n', function () require('snacks').scratch() end, desc = 'Open scratch buffer' },
     { '<leader>n', mode = 'n', function () require('snacks.scratch').select() end, desc = 'Choose scratch buffer' },
+    { '<F7>', mode = 'n', function () require('snacks').terminal() end, desc = 'Floating terminal' },
+    { '<leader>tl', mode = 'n', function () require('snacks').terminal('lazygit') end, desc = 'Terminal: LazyGit' },
+    { '<leader>td', mode = 'n', function () require('snacks').terminal('lazydocker') end, desc = 'Terminal: LazyDocker' },
+    { '<leader>tr', mode = 'n', function () require('snacks').terminal('ranger') end, desc = 'Terminal: Ranger' },
+    { '<leader>ts', mode = 'n', function () require('snacks').terminal('lftp') end, desc = 'Terminal: LFTP' },
   },
 }
