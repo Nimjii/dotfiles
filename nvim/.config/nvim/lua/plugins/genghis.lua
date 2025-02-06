@@ -3,7 +3,7 @@
 return {
   'chrisgrieser/nvim-genghis',
   dependencies = {
-    'stevearc/dressing.nvim',
+    'folke/snacks.nvim',
   },
   keys = {
     { '<leader>Fd', mode = 'n', function () require('genghis').duplicateFile() end, desc = 'Duplicate file' },
@@ -17,4 +17,3 @@ return {
     { '<leader>Fx', mode = 'x', function () require('genghis').moveSelectionToNewFile() end, desc = 'Move selection to new file' },
   },
 }
-

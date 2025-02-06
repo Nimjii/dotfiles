@@ -11,7 +11,6 @@
   "cmp-tailwind-colors": { "branch": "main", "commit": "4b200e280e9051a26ade776589c2ac246350f5dc" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "copilot.lua": { "branch": "master", "commit": "886ee73b6d464b2b3e3e6a7ff55ce87feac423a9" },
-  "dressing.nvim": { "branch": "master", "commit": "56ef6a969a4990d938c5fed40c370f65e125fc97" },
   "flash.nvim": { "branch": "main", "commit": "f899265876ecdcf7352dbc9f0adf87068cedefbb" },
   "fzf": { "branch": "master", "commit": "bbe1721a1883426f639c1efe6afef1d3e6c25181" },
   "git-blame.nvim": { "branch": "master", "commit": "2883a7460f611c2705b23f12d58d398d5ce6ec00" },
