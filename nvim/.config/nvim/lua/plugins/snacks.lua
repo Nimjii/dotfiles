@@ -13,7 +13,6 @@ return {
         return vim.g.snacks_indent ~= false
           and vim.b[buf].snacks_indent ~= false
           and vim.bo[buf].buftype == ""
-          and vim.bo.filetype ~= 'yaml'
           and vim.bo.filetype ~= 'markdown'
       end,
       indent = {
@@ -133,7 +132,7 @@ return {
     { '<leader>hf', mode = 'n', function () require('snacks.gitbrowse').open() end, desc = 'Open file url' },
     { '<leader>.', mode = 'n', function () require('snacks').scratch() end, desc = 'Open scratch buffer' },
     { '<leader>n', mode = 'n', function () require('snacks.scratch').select() end, desc = 'Choose scratch buffer' },
-    { '<F7>', mode = 'n', function () require('snacks').terminal() end, desc = 'Floating terminal' },
+    { '<F7>', mode = { 'n', 'i' }, function () require('snacks').terminal() end, desc = 'Floating terminal' },
     { '<leader>tl', mode = 'n', function () require('snacks').terminal('lazygit') end, desc = 'Terminal: LazyGit' },
     { '<leader>td', mode = 'n', function () require('snacks').terminal('lazydocker') end, desc = 'Terminal: LazyDocker' },
     { '<leader>tr', mode = 'n', function () require('snacks').terminal('ranger') end, desc = 'Terminal: Ranger' },

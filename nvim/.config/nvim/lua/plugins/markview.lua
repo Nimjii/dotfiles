@@ -6,7 +6,7 @@ return {
     lazy = false,
     opts = {
       preview = {
-        filetypes = { 'markdown', 'yaml' },
+        filetypes = { 'markdown' },
         icon_provider = 'mini',
       },
       html = {
@@ -16,6 +16,9 @@ return {
         enable = false,
       },
       typst = {
+        enable = false,
+      },
+      yaml = {
         enable = false,
       },
     },
