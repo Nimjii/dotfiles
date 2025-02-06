@@ -4,7 +4,7 @@ return {
   'cbochs/grapple.nvim',
   cmd = "Grapple",
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
+    'echasnovski/mini.nvim',
   },
   opts = {
     scope = 'git'
@@ -14,4 +14,3 @@ return {
     { '<leader>gp', mode = 'n', function () require('grapple').toggle_tags() end, desc = 'Tags popup' },
   },
 }
-

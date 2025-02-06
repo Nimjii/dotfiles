@@ -9,6 +9,13 @@ return {
       replace_netrw = true,
     },
     indent = {
+      filter = function (buf)
+        return vim.g.snacks_indent ~= false
+          and vim.b[buf].snacks_indent ~= false
+          and vim.bo[buf].buftype == ""
+          and vim.bo.filetype ~= 'yaml'
+          and vim.bo.filetype ~= 'markdown'
+      end,
       indent = {
         char = '┊',
         hl = {

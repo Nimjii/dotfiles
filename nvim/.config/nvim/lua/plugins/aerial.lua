@@ -3,8 +3,8 @@
 return {
   'stevearc/aerial.nvim',
   dependencies = {
+    'echasnovski/mini.nvim',
     'nvim-treesitter/nvim-treesitter',
-    'nvim-tree/nvim-web-devicons',
   },
   opts = {
     char = "▏",
@@ -35,4 +35,3 @@ return {
     use_treesitter = true,
   },
 }
-

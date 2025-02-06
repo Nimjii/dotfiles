@@ -11,3 +11,6 @@ vim.api.nvim_set_hl(0, 'SnacksIndent6', { fg = '#c6a0f6' })
 vim.api.nvim_set_hl(0, 'SnacksIndent7', { fg = '#8bd5ca' })
 
 vim.api.nvim_set_hl(0, 'SnacksIndentScope', { fg = '#f4dbd6' })
+
+vim.api.nvim_set_hl(0, 'TSconfig', { fg = '#8c8c8c' })
+vim.api.nvim_set_hl(0, 'TypoScript', { fg = '#FF8700' })
