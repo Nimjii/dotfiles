@@ -1,5 +1,4 @@
 -- @module utils
-require 'bootstrap'
 
 local M = {}
 
