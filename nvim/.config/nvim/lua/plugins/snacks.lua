@@ -43,6 +43,9 @@ return {
       enabled = true,
     },
     picker = {
+      matcher = {
+        frecency = true,
+      },
       sources = {
         explorer = {
           auto_close = true,
