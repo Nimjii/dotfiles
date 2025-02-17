@@ -135,6 +135,7 @@ return {
         'javascript',
         'json',
         'lua',
+        'luadoc',
         'make',
         'markdown',
         'markdown_inline',
