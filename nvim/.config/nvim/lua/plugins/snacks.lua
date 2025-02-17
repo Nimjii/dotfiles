@@ -150,7 +150,7 @@ return {
     { '<leader>fF', mode = 'n', function () require('snacks.picker').files({ hidden = true, ignored = true }) end, desc = 'Find all files' },
     { '<leader>/', mode = 'n', function () require('snacks.picker').grep({ hidden = true }) end, desc = 'Search in files' },
     { '<leader>fw', mode = 'n', function () require('snacks.picker').grep({ hidden = true, ignored = true }) end, desc = 'Search in all files' },
-    { '<leader>fb', mode = 'n', function () require('snacks.picker').grep_buffers() end, desc = 'Search in open buffers' },
+    { '<leader>fW', mode = 'n', function () require('snacks.picker').grep_buffers() end, desc = 'Search in open buffers' },
     { '<leader>ho', mode = 'n', function () require('snacks.gitbrowse').open({ what = 'commit' }) end, desc = 'Open commit url' },
     { '<leader>hf', mode = 'n', function () require('snacks.gitbrowse').open() end, desc = 'Open file url' },
     { '<leader>.', mode = 'n', function () require('snacks').scratch() end, desc = 'Open scratch buffer' },
