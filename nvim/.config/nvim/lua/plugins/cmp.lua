@@ -72,7 +72,7 @@ return {
         local buf_filetype = vim.api.nvim_get_option_value('filetype', { buf = buf })
         local filetype_denylist = { 'snacks_picker_input', 'snacks_picker_list' }
 
-        if require('utils').is_large_file(buf) or vim.tbl_contains(filetype_denylist, buf_filetype) then
+        if vim.tbl_contains(filetype_denylist, buf_filetype) then
           return false
         end
 

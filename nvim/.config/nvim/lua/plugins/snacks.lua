@@ -5,6 +5,9 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
+    bigfile = {
+      enabled = true,
+    },
     explorer = {
       replace_netrw = true,
     },

@@ -40,11 +40,6 @@ return {
       modules = {},
       highlight = {
         enable = true,
-        disable = function (_, buf)
-          if require('utils').is_large_file(buf) then
-            return true
-          end
-        end,
         additional_vim_regex_highlighting = { 'html' },
       },
       incremental_selection = {
