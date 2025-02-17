@@ -9,7 +9,6 @@ return {
     },
   },
   keys = {
-    { '<leader>z', mode = 'n', function () require('maximize').toggle() end, desc = 'Toggle split maximization' },
+    { '<leader>x', mode = 'n', function () require('maximize').toggle() end, desc = 'Toggle split maximization' },
   },
 }
-

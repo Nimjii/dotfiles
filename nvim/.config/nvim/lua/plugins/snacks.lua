@@ -8,10 +8,18 @@ return {
     bigfile = {
       enabled = true,
     },
+    dim = {
+      animate = {
+        enabled = false,
+      },
+    },
     explorer = {
       replace_netrw = true,
     },
     indent = {
+      animate = {
+        enabled = false,
+      },
       filter = function (buf)
         return vim.g.snacks_indent ~= false
           and vim.b[buf].snacks_indent ~= false
@@ -102,6 +110,17 @@ return {
     words = {
       enabled = true,
     },
+    zen = {
+      toggles = {
+        indent = false,
+      },
+      on_open = function ()
+        require('mini.diff').disable(vim.api.nvim_get_current_buf())
+      end,
+      on_close = function ()
+        require('mini.diff').enable(vim.api.nvim_get_current_buf())
+      end,
+    },
   },
   keys = {
     { 'gd', mode = 'n', function () require('snacks.picker').lsp_definitions() end, desc = 'Go to definition' },
@@ -109,9 +128,10 @@ return {
     { 'gI', mode = 'n', function () require('snacks.picker').lsp_implementations() end, desc = 'Go to implementation' },
     { 'gr', mode = 'n', function () require('snacks.picker').lsp_references() end, desc = 'Go to references' },
     { 'gt', mode = 'n', function () require('snacks.picker').lsp_type_definitions() end, desc = 'Type definition' },
+    { '<leader>b', mode = 'n', function () require('snacks.git').blame_line() end, desc = 'Blame current line' },
     { '<leader>e', mode = 'n', function () require('snacks.picker').explorer() end, desc = 'Toggle file tree' },
     { '<leader>fc', mode = 'n', function () require('snacks.picker').git_log() end, desc = 'Find commits' },
-    { '<leader>fC', mode = 'n', function () require('snacks.picker').git_log_file() end, desc = 'Find commits' },
+    { '<leader>fC', mode = 'n', function () require('snacks.picker').git_log_file() end, desc = 'Find commits for current file' },
     { '<leader>fb', mode = 'n', function () require('snacks.picker').git_branches() end, desc = 'Find branches' },
     { '<leader>fd', mode = 'n', function () require('snacks.picker').diagnostics() end, desc = 'Find diagnostics' },
     { '<leader>fg', mode = 'n', function () require('snacks.picker').git_files() end, desc = 'Find git files' },
@@ -140,5 +160,6 @@ return {
     { '<leader>td', mode = 'n', function () require('snacks').terminal('lazydocker') end, desc = 'Terminal: LazyDocker' },
     { '<leader>tr', mode = 'n', function () require('snacks').terminal('ranger') end, desc = 'Terminal: Ranger' },
     { '<leader>ts', mode = 'n', function () require('snacks').terminal('lftp') end, desc = 'Terminal: LFTP' },
+    { '<leader>z', mode = 'n', function () require('snacks').zen() end, desc = 'Toggle zen mode' },
   },
 }
