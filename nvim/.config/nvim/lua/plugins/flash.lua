@@ -17,6 +17,7 @@ return {
         autohide = false,
         jump_labels = false,
         multi_line = true,
+        keys = { 't', 'T', ';', ',' },
       },
     },
     search = {
@@ -24,9 +25,8 @@ return {
     },
   },
   keys = {
-    { 's', mode = { 'n', 'o', 'x' }, function () require('flash').jump() end, desc = 'Flash' },
-    { 'S', mode = { 'n', 'o', 'x' }, function () require('flash').treesitter() end, desc = 'Flash Treesitter' },
+    { 'f', mode = { 'n', 'o', 'x' }, function () require('flash').jump() end, desc = 'Flash' },
+    { 'F', mode = { 'n', 'o', 'x' }, function () require('flash').treesitter() end, desc = 'Flash Treesitter' },
     { 'r', mode = { 'o', 'x' }, function () require('flash').treesitter_search() end, desc = 'Treesitter search' },
   },
 }
-
