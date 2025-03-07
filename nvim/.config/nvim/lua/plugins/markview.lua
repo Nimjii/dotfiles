@@ -12,6 +12,9 @@ return {
       html = {
         enable = false,
       },
+      json = {
+        enable = false,
+      },
       latex = {
         enable = false,
       },
