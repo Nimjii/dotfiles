@@ -66,8 +66,21 @@ return {
       },
 
       intelephense = {
-        ['intelephense.files.maxSize'] = 2097152,   -- 2MB
-        ['intelephense.maxMemory'] = 4096,
+        intelephense = {
+          completion = {
+            suggestObjectOperatorStaticMethods = false,
+          },
+          files = {
+            maxSize = 5000000,
+          },
+          maxMemory = 4096,
+          phpdoc = {
+            returnVoid = false,
+          },
+          references = {
+            exclude = {},
+          },
+        },
       },
 
       lua_ls = {
