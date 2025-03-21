@@ -43,6 +43,11 @@ return {
       enabled = true,
     },
     picker = {
+      formatters = {
+        file = {
+          truncate = 100,
+        },
+      },
       matcher = {
         frecency = true,
       },
