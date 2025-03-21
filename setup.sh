@@ -122,11 +122,11 @@ create_link "bat"
 create_link "git"
 create_link "iterm2"
 create_link "karabiner"
+create_link "kitty"
 create_link "lazygit"
 create_link "nvim"
 create_link "ssh"
 create_link "tmux"
-create_link "wezterm"
 
 # move font files to font directory
 cp fonts/Library/Fonts/* ~/Library/Fonts/
@@ -135,4 +135,3 @@ cp fonts/Library/Fonts/* ~/Library/Fonts/
 nvim --headless "+Lazy! sync" +qa
 nvim --headless "+MasonUpdate" +qa
 nvim --headless "+TSUpdate" +qa
-
