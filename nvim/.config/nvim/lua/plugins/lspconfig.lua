@@ -80,6 +80,7 @@ return {
           references = {
             exclude = {},
           },
+          runtime = '/usr/local/bin/node',
         },
       },
 
