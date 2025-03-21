@@ -63,6 +63,17 @@ return {
           'javascript',
           'javascriptreact',
         },
+        tailwindCSS = {
+          files = {
+            exclude = {
+              '**/.git/**',
+              '**/node_modules/**',
+              '**/.hg/**',
+              '**/.svn/**',
+              '**/*.scss',
+            }
+          },
+        },
       },
 
       intelephense = {
