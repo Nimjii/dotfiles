@@ -50,6 +50,7 @@ alias rebase="git rebase -i HEAD~5"
 alias lg="lazygit"
 alias vi="nvim"
 
+nvm use 20 > /dev/null
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
