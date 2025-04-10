@@ -9,6 +9,7 @@
 [core]
     autocrlf = input
     attributesfile = /Users/l.spreitzer/.gitattributes
+    filemode = true
 [gpg]
     format = ssh
 [gpg "ssh"]
