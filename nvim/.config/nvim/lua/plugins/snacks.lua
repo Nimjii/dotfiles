@@ -27,7 +27,6 @@ return {
           and vim.bo.filetype ~= 'markdown'
       end,
       indent = {
-        char = '┊',
         hl = {
           'SnacksIndent1',
           'SnacksIndent2',
