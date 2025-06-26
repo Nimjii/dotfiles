@@ -11,11 +11,12 @@ return {
     },
     suggestion = {
       auto_trigger = true,
+      hide_during_completion = false,
       keymap = {
-        accept = '<C-k>',
-        next = '<C-h>',
-        prev = '<C-l>',
-        dismiss = '<C-c>',
+        accept = '<Tab>',
+        next = '<C-n>',
+        prev = '<C-p>',
+        dismiss = '<C-e>',
       },
     },
     server_opts_overrides = {
@@ -31,4 +32,3 @@ return {
     { '<leader>ct', mode = 'n', function () require('copilot.suggestion').toggle_auto_trigger() end, desc = 'Toggle auto trigger' },
   },
 }
-
