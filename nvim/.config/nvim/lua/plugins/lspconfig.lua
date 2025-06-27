@@ -137,7 +137,8 @@ return {
             environment = {
               phpVersion = (function()
                 local default = '8.4.0'
-                local composer_json = vim.fn.findfile('composer.json', '**1')
+                local cwd = vim.fn.getcwd()
+                local composer_json = vim.fn.findfile('composer.json', cwd .. '/src;' .. cwd)
 
                 if composer_json == '' then
                   return default
