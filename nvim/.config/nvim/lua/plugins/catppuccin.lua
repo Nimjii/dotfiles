@@ -14,6 +14,7 @@ return {
       integrations = {
         aerial = true,
         alpha = false,
+        blink_cmp = true,
         dashboard = false,
         fzf = false,
         illuminate = false,

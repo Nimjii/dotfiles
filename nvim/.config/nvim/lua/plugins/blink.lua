@@ -34,16 +34,21 @@ return {
       nerd_font_variant = 'mono',
     },
     completion = {
+      menu = { border = 'rounded' },
       documentation = {
         auto_show = false,
         auto_show_delay_ms = 500,
+        window = { border = 'rounded' },
       },
     },
     fuzzy = { implementation = 'lua' },
     keymap = {
       preset = 'default',
     },
-    signature = { enabled = true },
+    signature = {
+      enabled = true,
+      window = { border = 'rounded' },
+    },
     snippets = { preset = 'luasnip' },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'lazydev' },
