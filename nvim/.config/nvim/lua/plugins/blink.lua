@@ -14,6 +14,13 @@ return {
         end
         return 'make install_jsregexp'
       end)(),
+      config = function (_, opts)
+        require('luasnip.loaders.from_vscode').lazy_load()
+        require('luasnip.loaders.from_lua').lazy_load({paths = '~/.config/nvim/lua/snippets'})
+        require('luasnip.loaders.from_snipmate').load({paths = '~/.config/nvim/snippets'})
+
+        require('luasnip').setup(opts)
+      end
     },
 
     {
