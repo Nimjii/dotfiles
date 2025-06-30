@@ -200,8 +200,6 @@ return {
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     for server_name, config in pairs(servers) do
-      config.root_markers = { '.git' }
-
       vim.lsp.config(server_name, config)
     end
 
