@@ -163,7 +163,7 @@ return {
     { '<leader>.', mode = 'n', function () require('snacks').scratch() end, desc = 'Open scratch buffer' },
     { '<leader>n', mode = 'n', function () require('snacks.scratch').select() end, desc = 'Choose scratch buffer' },
     { '<F7>', mode = { 'n', 'i' }, function () require('snacks').terminal() end, desc = 'Floating terminal' },
-    { '<leader>tl', mode = 'n', function () require('snacks').terminal('lazygit') end, desc = 'Terminal: LazyGit' },
+    { '<leader>tl', mode = 'n', function () require('snacks').lazygit() end, desc = 'Terminal: LazyGit' },
     { '<leader>td', mode = 'n', function () require('snacks').terminal('lazydocker') end, desc = 'Terminal: LazyDocker' },
     { '<leader>tr', mode = 'n', function () require('snacks').terminal('ranger') end, desc = 'Terminal: Ranger' },
     { '<leader>ts', mode = 'n', function () require('snacks').terminal('lftp') end, desc = 'Terminal: LFTP' },
