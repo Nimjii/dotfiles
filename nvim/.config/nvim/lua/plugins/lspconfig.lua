@@ -128,8 +128,12 @@ return {
       },
 
       intelephense = {
+        root_markers = { 'vendor', '.git', 'composer.json' },
         settings = {
           intelephense = {
+            compatibility = {
+              preferPsalmPhpstanPrefixedAnnotations = true,
+            },
             completion = {
               suggestObjectOperatorStaticMethods = false,
             },
