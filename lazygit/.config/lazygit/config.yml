@@ -3,5 +3,4 @@ customCommands:
     context: 'commits'
     loadingText: "Pushing..."
     description: 'push up to commit'
-    stream: yes
     command: 'git push {{if .CheckedOutBranch.UpstreamRemote}}{{.CheckedOutBranch.UpstreamRemote}}{{else}}-u origin{{end}} {{.SelectedLocalCommit.Sha}}:{{if .CheckedOutBranch.UpstreamBranch}}{{.CheckedOutBranch.UpstreamBranch}}{{else}}refs/heads/{{.CheckedOutBranch.Name}}{{end}}{{if .CheckedOutBranch.UpstreamRemote}}{{else}} && git branch -u origin/{{.CheckedOutBranch.Name}}{{end}}'
