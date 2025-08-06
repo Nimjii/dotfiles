@@ -154,7 +154,7 @@ return {
                   return config_values.require.php
                 end
 
-                if config_values.config.platform.php then
+                if config_values.config.platform and config_values.config.platform.php then
                   return config_values.config.platform.php
                 end
 
