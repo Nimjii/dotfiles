@@ -2,6 +2,7 @@
 
 return {
   'catppuccin/nvim',
+  tag = 'v1.11.0',
   name = 'catppuccin',
   lazy = false,
   priority = 1000,
