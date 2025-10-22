@@ -2,13 +2,13 @@
 
 -- Mapping groups
 require('which-key').register({
-  c = { mode = { 'n', 'v' }, name = ' Copilot' },
   d = { mode = { 'n', 'v' }, name = ' Debugger' },
   f = { name = '󰍉 Find' },
   F = { mode = { 'n', 'v' }, name = ' Files' },
   g = { name = '󰛢 Grapple' },
   h = { name = ' Git' },
   H = { name = '󰤱 Pins' },
+  o = { name = '󱙺 OpenCode' },
   p = { name = ' Portal' },
   Q = { name = ' Quickfix' },
   t = { name = ' Terminal' },
